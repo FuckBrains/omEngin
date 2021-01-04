@@ -1,0 +1,5 @@
+select TAX1.CustomAttr15, sitedb.Priority from TAX1
+left join sitedb on tax1.CustomAttr15 = sitedb.Site_Code 
+
+select * , sitedb.Priority from TAX1
+left join sitedb on tax1.CustomAttr15 = sitedb.Site_Code 

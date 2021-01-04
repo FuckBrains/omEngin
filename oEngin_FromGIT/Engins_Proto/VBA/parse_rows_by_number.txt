@@ -1,0 +1,75 @@
+
+sub parse_cols_by_row_num()
+    x = parse_rows_by_number("RAW", 10, Array(2, "17", "F", 9, 30))
+    'x = parse_rows_by_number("RAW", 10, Array(2, "17", "F", 9, 30), "array")
+    If VarType(x) = 8204 Then
+        For i = 0 To 3
+            MsgBox x(i)
+        Next i
+    Else
+        MsgBox x
+    End If
+End sub
+
+''--------------------------------------------------------------------------------------------------'''
+
+Function parse_rows_by_number(shtname, row_number, pick_cols, Optional return_type) As Variant
+'return type set to "string" if not provided and can be array as arg got as "array"
+'data return will follwoig pick_cols sequence
+'row_number = search string on a columns, datatype string
+'pick_cols = from which columns rows values is parsed, datatype = array
+'shtname = sheets name,  datatype = string
+
+Dim arr() As Variant
+Set sht = ThisWorkbook.Worksheets(shtname)
+sht.Activate
+
+If IsMissing(return_type) Then
+    hp = ""
+    For i = 0 To UBound(pick_cols)
+        vtype = VarType(pick_cols(i))
+        If IsNumeric(pick_cols(i)) Then
+            v1 = sht.Cells(CInt(row_number), CInt(pick_cols(i)))
+        Else
+            v1 = sht.Range(pick_cols(i) & CStr(row_number))
+        End If
+
+        If VarType(v1) = 7 Then
+            tmp = CStr(Format(v1, "HH:MM dd-mm-yyyy"))
+            v1 = tmp
+        End If
+        If hp = "" Then
+            hp = v1
+        Else
+            hp = hp & "," & v1
+        End If
+    Next i
+    parse_rows_by_number = hp
+    Exit Function
+ElseIf return_type = "array" Then
+    ReDim arr(UBound(pick_cols))
+    For i = 0 To UBound(pick_cols)
+        vtype = VarType(pick_cols(i))
+        If IsNumeric(pick_cols(i)) Then
+            v1 = sht.Cells(CInt(row_number), CInt(pick_cols(i)))
+        Else
+            v1 = sht.Range(pick_cols(i) & CStr(row_number))
+        End If
+
+        If VarType(v1) = 7 Then
+            tmp = CStr(Format(v1, "HH:MM dd-mm-yyyy"))
+            v1 = tmp
+        End If
+        If hp = "" Then
+            arr(i) = v1
+        Else
+            hp = arr(i)
+            arr(i) = hp & "," & v1
+        End If
+    Next i
+    parse_rows_by_number = arr
+End If
+
+
+
+End Function

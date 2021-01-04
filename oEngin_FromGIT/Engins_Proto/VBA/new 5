@@ -1,0 +1,47 @@
+Sub derive_cols_test()
+
+Call devive_cols("RAW", 9, Array("2G SITE", "3G SITE"), Array("2G", "3G"), 10)
+
+End Sub
+
+
+
+Sub devive_cols(shtname, fromcols, array_conditions, array_values, Optional pastecol)
+'length of array_conditions and array_values must be same
+'fromcols be col num as number or range first char
+Set sht = ThisWorkbook.Worksheets(shtname)
+sht.Activate
+If IsNumeric(fromcols) Then
+    colstr = Split(Cells(1, CInt(fromcols)).Address, "$")(1)
+Else
+    colstr = fromcols
+End If
+
+If IsMissing(pastecol) Then
+    Lcol = sht.Cells(1, Columns.Count).End(xlToLeft).Column
+    pcol = Split(Cells(1, Lcol).Address, "$")(1)
+Else
+    If IsNumeric(pastecol) Then
+        pcol = Split(Cells(1, CInt(pastecol)).Address, "$")(1)
+    Else
+        pcol = pastecol
+    End If
+End If
+
+lrw = sht.Cells(Rows.Count, colstr).End(xlUp).Row
+For i = 1 To lrw
+    st = sht.Range(colstr & i)
+    found = 0
+    For n = 0 To UBound(array_conditions)
+        If InStr(st, array_conditions(n)) <> 0 Then
+            sht.Range(pcol & i) = array_values(n)
+            found = 1
+            Exit For
+        End If
+    Next n
+    If found = 0 Then
+        sht.Range(pcol & i) = "NA"
+    End If
+Next i
+
+End Sub

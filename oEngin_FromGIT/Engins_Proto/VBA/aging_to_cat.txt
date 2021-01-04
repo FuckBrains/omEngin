@@ -1,0 +1,54 @@
+Sub agcall()
+Call aging_creator("RAW", Array(200, 4500), Array("16P", "IGNORE"), "K", "6")
+
+End Sub
+
+
+
+
+Sub aging_creator(shtname, cat_cond_min, cat_array_string, pastecol, Optional Col_F_or_Other)
+'creates category from aging
+' cat_cond_min = arrays contains condition minutes (360,1140)
+' cat_array_string respective to "cat_cond_min" as (">6",">24")
+
+    Set sh = ThisWorkbook.Worksheets(shtname)
+    sh.Activate
+    
+    If IsMissing(Col_F_or_Other) Then
+        colstr = "F"
+        Set rncolstr = Range("F1")
+        cols = rncolstr.Column
+        sh.Columns(cols).Replace what:="=-", replacement:="", lookat:=xlPart, MatchCase:=False
+    Else
+        If IsNumeric(Col_F_or_Other) Then
+            colstr = Split(Cells(1, CInt(Col_F_or_Other)).Address, "$")(1)
+            sh.Columns(CInt(Col_F_or_Other)).Replace what:="=-", replacement:="", lookat:=xlPart, MatchCase:=False
+        Else
+            colstr = Col_F_or_Other
+            Set rncolstr = Range(colstr & "1")
+            cols = rncolstr.Column
+            sh.Columns(cols).Replace what:="=-", replacement:="", lookat:=xlPart, MatchCase:=False
+        End If
+    End If
+    
+    lrw = sh.Cells(Rows.Count, "A").End(xlUp).Row
+    For i = 2 To lrw
+            cnt = 0
+            lo = sh.Range(colstr & i)
+            On Error GoTo B:
+            If lo <> "" Or lo <> "NA" Then
+                diff = DateDiff("n", lo, Now())
+                For n = 0 To UBound(cat_cond_min)
+                    x = cat_cond_min(n)
+                    If diff > x Then
+                        cnt = cnt + 1
+                        sh.Range(pastecol & i) = cat_array_string(n)
+                    End If
+                Next n
+            End If
+B:
+        If cnt = 0 Then
+            sh.Range(pastecol & i) = "NA"
+        End If
+    Next i
+End Sub

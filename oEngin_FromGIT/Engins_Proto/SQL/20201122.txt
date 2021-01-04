@@ -1,0 +1,175 @@
+class initiated - 20201122_055000mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_055000class initiated - 20201122_055218mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_055218class initiated - 20201122_055505mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_055505class initiated - 20201122_060032mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_060032class initiated - 20201122_064339
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_064339
+class initiated - 20201122_064726
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_064726
+class initiated - 20201122_065346
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_065346
+class initiated - 20201122_073548
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_073548
+class initiated - 20201122_073924
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_073924
+class initiated - 20201122_074609
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_074609
+select * from OmDB3 - 20201122_074612
+class initiated - 20201122_075358
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_075358
+class initiated - 20201122_082103
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_082103
+select * from Contacts_Table_1 where Number = '01717015682' - 20201122_082103
+class initiated - 20201122_082210
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_082210
+select * from Contacts_Table_1 where Number = '01717015682' - 20201122_082210
+class initiated - 20201122_082251
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_082251
+select * from Contacts_Table_1 where Number = '01717015682' - 20201122_082251
+class initiated - 20201122_083139
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_083139
+select * from Contacts_Table_1 where Number = '01717015682' - 20201122_083139
+class initiated - 20201122_083150
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_083150
+select * from Contacts_Table_1 where Number = '01717015682' - 20201122_083150
+class initiated - 20201122_083200
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_083200
+select * from Contacts_Table_1 where Number = '01717015682' - 20201122_083201
+class initiated - 20201122_083210
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_083210
+select * from Contacts_Table_1 where Number = '01717015682' - 20201122_083210
+class initiated - 20201122_083804
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_083804
+select * from Contacts_Table_1 where Number = '01717015682' - 20201122_083804
+select * from Contacts_Table_1 - 20201122_083804
+class initiated - 20201122_084114
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084114
+class initiated - 20201122_084114
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084114
+select * from Periodic_Contacts where Number = '01717015682' - 20201122_084114
+select * from Periodic_Contacts - 20201122_084114
+class initiated - 20201122_084153
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084153
+select * from Periodic_Contacts where Number = '01717015682' - 20201122_084153
+class initiated - 20201122_084215
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084215
+select * from Periodic_Contacts where Number = '01717015682' - 20201122_084215
+class initiated - 20201122_084215
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084215
+select * from Periodic_Contacts where Number = '01717015682' - 20201122_084215
+select * from Periodic_Contacts - 20201122_084215
+class initiated - 20201122_084426
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084426
+select * from Periodic_Contacts where Number = '01717015682' - 20201122_084426
+class initiated - 20201122_084426
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084426
+select * from Periodic_Contacts - 20201122_084426
+class initiated - 20201122_084445
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084445
+select * from Periodic_Contacts where Number = '01717015682' - 20201122_084445
+class initiated - 20201122_084445
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084445
+select * from Periodic_Contacts - 20201122_084445
+class initiated - 20201122_084511
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084511
+select * from Periodic_Contacts where Number = '01717015682' - 20201122_084511
+class initiated - 20201122_084511
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084511
+select * from Periodic_Contacts where Number = '01717015682' - 20201122_084511
+class initiated - 20201122_084533
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084533
+select * from Periodic_Contacts where Number = '01717015682' - 20201122_084533
+class initiated - 20201122_084820
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084820
+select * from Periodic_Contacts where Number = '01717015682' - 20201122_084820
+class initiated - 20201122_084830
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084830
+select * from Periodic_Contacts where Number = '01717015682' - 20201122_084830
+class initiated - 20201122_084834
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084834
+select * from Periodic_Contacts where Number = '01717015682' - 20201122_084834
+class initiated - 20201122_084908
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084908
+select * from Periodic_Contacts where Number = '01717015682' - 20201122_084908
+class initiated - 20201122_084923
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084923
+select * from Periodic_Contacts where Number = '01717015682' - 20201122_084923
+class initiated - 20201122_084928
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_084928
+select * from Periodic_Contacts where Number = '717015682' - 20201122_084928
+class initiated - 20201122_111013
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_111013
+select * from VIP - 20201122_111016
+class initiated - 20201122_111016
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_111016
+select * from TOP5 - 20201122_111018
+class initiated - 20201122_111018
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_111018
+select * from IBS - 20201122_111020
+class initiated - 20201122_111020
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_111020
+select * from ABHI - 20201122_111022
+class initiated - 20201122_111022
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_111022
+select * from RMT - 20201122_111024
+class initiated - 20201122_111755
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_111755
+class initiated - 20201122_112214
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_112214
+class initiated - 20201122_112724
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_112724
+class initiated - 20201122_112927
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_112927
+class initiated - 20201122_114053
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_114053
+class initiated - 20201122_114224
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_114224
+class initiated - 20201122_114622
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_114622
+class initiated - 20201122_114622
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_114622
+class initiated - 20201122_115023
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_115023
+class initiated - 20201122_115023
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_115023
+class initiated - 20201122_115348
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_115348
+class initiated - 20201122_115348
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_115348
+class initiated - 20201122_115628
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_115628
+class initiated - 20201122_115628
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_115628
+class initiated - 20201122_115729
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_115729
+class initiated - 20201122_115729
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_115729
+class initiated - 20201122_122105
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_122105
+class initiated - 20201122_122131
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_122131
+class initiated - 20201122_122214
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_122214
+class initiated - 20201122_122317
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_122317
+class initiated - 20201122_122317
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_122317
+class initiated - 20201122_122558
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_122558
+class initiated - 20201122_122558
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_122558
+select * from VIP - 20201122_122601
+class initiated - 20201122_122601
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_122601
+select * from TOP5 - 20201122_122603
+class initiated - 20201122_122603
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_122603
+select * from IBS - 20201122_122605
+class initiated - 20201122_122605
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_122605
+select * from ABHI - 20201122_122607
+class initiated - 20201122_122607
+Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456& - 20201122_122607
+select * from RMT - 20201122_122609
+class initiated - 20201122_154722
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_154722
+class initiated - 20201122_160903
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_160903
+class initiated - 20201122_160923
+mysql+mysqlconnector://root:admin@127.0.0.1:3306/omdb - 20201122_160923

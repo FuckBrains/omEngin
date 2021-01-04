@@ -1,0 +1,137 @@
+Dim dbconn As ADODB.Connection
+
+''''''''Procedure''''''''''''''
+Sub get_data_from_db()
+
+    vipcode = read_records("VIP", Array("Code"))  ''Get Code as array [here VIP is the table name]
+    vipname = read_records("VIP", Array("Name"))   ''get Name as array [here VIP is the table name]
+
+    Top5code = read_records("VIP", Array("Code"))  ''Get Code as array [here VIP is the table name]
+    Top5Name = read_records("VIP", Array("Name"))   ''get Name as array [here VIP is the table name]
+
+    abhitech = read_records("ABHI", Array("Code"))
+    
+    RMT_Code = read_records("ROBIMT", Array("Code"))
+    RMT_Name = read_records("ROBIMT", Array("Name"))
+
+    contacts = read_records("Periodic_Contacts", "Number") ''Get comma seperated Periodic_Contacts Number(str)
+
+    IBS_Code = read_records("IBS", Array("Code"))
+    IBS_Name = read_records("IBS", Array("Name"))
+
+End Sub
+
+''''''''''Function sqlserver'''''''''''''
+Function sqlserver_conn()
+    Set dbconn = New ADODB.Connection
+    uname = Environ$("username")
+    If uname = "soc" Then
+        dbconn.Open "Driver={SQL Server};SERVER=192.168.88.121;DATABASE=SOC_Roster;UID=sa;PWD=Robi456&"
+    Else
+        dbconn.Open "DRIVER={MySQL ODBC 8.0 ANSI Driver};" & "SERVER=localhost;" & "DATABASE=omdb;" & "USER=root;" & _
+            "PASSWORD=admin;" & "Option=3"
+    End If
+End Function
+
+
+''''''''''Function readRecods'''''''''''''
+Function read_records(Optional tbl, Optional fldname, Optional return_type) As Variant
+con = sqlserver_conn()
+Dim rary(), rstr As Variant
+If IsMissing(tbl) Then
+    tbl = "Periodic_Contacts"
+    fldname = "Number"
+End If
+rstr = ""
+qstr = "select * from " & tbl
+If VarType(fldname) = 8204 Then
+    rtype = "ary"
+Else
+    rtype = "str"
+End If
+qstr = "select * from " & tbl
+Set rs = CreateObject("ADODB.Recordset")
+rs.Open qstr, dbconn
+If IsMissing(return_type) = False Then
+    If return_type = "Multi" Then
+        rs.MoveFirst
+        arr = rs.GetRows
+        read_records = arr
+        Exit Function
+        arrdim = NumberOfArrayDimensions(arr)
+        If arrdim > 1 Then
+            rw = Mul_Dim_Array_rows(arr)
+            col = Mul_Dim_Array_cols(arr)
+            For i = 0 To rw
+                c = 0
+                While c <= col
+                    x = arr(c, i)
+                    c = c + 1
+                Wend
+            Next i
+        End If
+    End If
+End If
+
+If rtype = "str" Then
+    Do Until rs.EOF
+        For Each fld In rs.Fields
+            If fld.name = fldname Then
+                 If rstr = "" Then
+                    rstr = fld.Value
+                 Else
+                    rstr = rstr & "," & fld.Value
+                 End If
+            End If
+        Next
+        rs.MoveNext
+    Loop
+    read_records = rstr
+Else
+    cnt = 1
+    Do Until rs.EOF
+        For Each fld In rs.Fields
+            If fld.name = fldname(0) Then
+                ReDim Preserve rary(cnt)
+                rary(cnt) = fld.Value
+            End If
+        Next
+        cnt = cnt + 1
+        rs.MoveNext
+    Loop
+    read_records = rary
+End If
+End Function
+
+
+''''''''''Function Number Of Array Dimensions'''''''''''''
+Public Function NumberOfArrayDimensions(arr As Variant) As Integer
+Dim Ndx As Integer
+Dim Res As Integer
+On Error Resume Next
+Do
+    Ndx = Ndx + 1
+    Res = UBound(arr, Ndx)
+Loop Until Err.Number <> 0
+Err.Clear
+NumberOfArrayDimensions = Ndx - 1
+End Function
+Sub ShowArrayBounds()
+    Dim givenData(3 To 5, 5 To 7) As Double
+
+    MsgBox LBound(givenData, 1)
+    MsgBox UBound(givenData, 1)
+    MsgBox LBound(givenData, 2)
+    MsgBox UBound(givenData, 2)
+
+End Sub
+
+''''''''''Function multi Dimensions array length'''''''''''''
+Function Mul_Dim_Array_cols(ary) As Integer
+    Mul_Dim_Array_cols = UBound(ary, 1)
+End Function
+
+''''''''''Function multi Dimensions array length'''''''''''''
+Function Mul_Dim_Array_rows(ary) As Integer
+    Mul_Dim_Array_rows = UBound(ary, 2)
+End Function

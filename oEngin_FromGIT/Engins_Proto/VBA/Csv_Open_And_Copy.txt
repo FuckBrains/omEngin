@@ -1,0 +1,87 @@
+Sub csv_test_ext_calling()
+'x1 = is_file_exist("E:\GIT\OmProject\socksbz\omprox.py")
+x2 = OpenCSV_And_Copy("C:\Users\kabir.omi\Desktop\Book1.csv", "2G")
+
+End Sub
+'''---- Open/Create CSV File by Passed FullPath ----'''
+Function OpenCSV_And_Copy(fullpath, dsht)
+On Error GoTo last:
+Dim ws As Worksheet
+Set wb = ThisWorkbook
+
+flname1 = Right(fullpath, Len(fullpath) - InStrRev(fullpath, "\"))
+FL = Replace(flname1, ".csv", "")
+x1 = is_file_exist(fullpath)
+x2 = is_workbook_opened(FL, "1")
+
+If x1 = "Y" And x2 = "N" Then
+    Application.ScreenUpdating = False
+    Application.DisplayAlerts = False
+
+    For Each ws In ThisWorkbook.Worksheets
+        If ws.name = dsht Then
+            ThisWorkbook.Sheets(ws.name).Delete
+            Exit For
+        End If
+    Next ws
+        
+        Workbooks.OpenText Filename:=fullpath, DataType:=xlDelimited, comma:=True
+        Set awb = ActiveWorkbook
+        With ActiveWorkbook
+            .ActiveSheet.Copy After:=ThisWorkbook.Sheets(Sheets.count)
+            .Close
+            ThisWorkbook.ActiveSheet.name = dsht
+        End With
+    
+    Application.ScreenUpdating = True
+End If
+last:
+    Application.ScreenUpdating = True
+
+End Function
+Public Sub OpenCsvFile()
+    Application.ScreenUpdating = False
+    Workbooks.OpenText Filename:="C:\Users\WYMAN\Desktop\staff list.csv", DataType:=xlDelimited, comma:=True
+    With ActiveWorkbook
+        .ActiveSheet.Copy After:=ThisWorkbook.Sheets(Sheets.count)
+        .Close
+    End With
+    Cells.Select
+    Cells.EntireColumn.AutoFit
+    Range("A1").Select
+    Application.ScreenUpdating = True
+End Sub
+
+Function is_file_exist(fullpath) As Variant
+Dim strFilename As String
+Dim strFileExists As String
+    strFilename = fullpath
+    strFileExists = Dir(strFilename)
+ 
+   If strFileExists = "" Then
+        is_file_exist = "N"
+    Else
+        is_file_exist = "Y"
+    End If
+End Function
+
+Function is_workbook_opened(wbn, Optional need_close) As Variant
+    Dim wb As Workbook
+    Dim AlreadyOpen As Boolean
+    AlreadyOpen = False
+    For Each wb In Workbooks
+        If wb.name = wbn Or InStr(wb.name, wbn) <> 0 Then
+            AlreadyOpen = True
+            If IsMissing(need_close) = False Then
+                wb.Close SaveChanges:=True
+            End If
+        Exit For
+        End If
+    Next wb
+    If AlreadyOpen = False Then
+        is_workbook_opened = "N"
+    Else
+        is_workbook_opened = "Y"
+    End If
+End Function
+

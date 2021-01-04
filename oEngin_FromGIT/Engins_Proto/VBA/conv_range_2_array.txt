@@ -1,0 +1,35 @@
+Function conv_rng_to_array_1D(rn, get_col) As Variant
+	rws = rn.Rows.Count
+	col = rn.Columns.Count
+	acnt = rn.Areas.Count
+	wsname = rn.Worksheet.name
+	LastUsedRow = rn.End(xlDown).Row
+	lrw = LastUsedRow
+	Set rnx = rn.Resize(LastUsedRow, col)
+	Dim ar() As Variant
+	ReDim ar(LastUsedRow)
+	For i = 1 To LastUsedRow
+	   ar(i) = rnx.Cells(i, get_col)
+	Next i
+	conv_rng_to_array_1D = ar
+End Function
+
+'---------------------------------------------------------------'
+
+Function conv_rng_to_array_2D(rn) As Variant
+	rws = rn.Rows.Count
+	col = rn.Columns.Count
+	acnt = rn.Areas.Count
+	wsname = rn.Worksheet.name
+	LastUsedRow = rn.End(xlDown).Row
+	lrw = LastUsedRow
+	Set rnx = rn.Resize(LastUsedRow, col)
+	Dim mularr() As Variant
+	ReDim mularr(0 To LastUsedRow, 1 To col)
+	For i = 1 To lrw
+		For n = 1 To col
+			mularr(i, n) = rnx.Cells(i, n)
+		Next n
+	Next i
+	conv_rng_to_array_2D = mularr
+End Function
