@@ -1,0 +1,2 @@
+select CustomAttr11, COUNT(CustomAttr11) from TAX1 where Resource in(
+select Resource from TAX1 where Summary like'%MAIN%') group by CustomAttr11 having COUNT(CustomAttr11)>30

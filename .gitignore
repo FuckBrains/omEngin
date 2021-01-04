@@ -5,9 +5,14 @@ __pycache__/
 
 # C extensions
 *.so
+*.csv
+*.zip
+*.rar
 
 # Distribution / packaging
 .Python
+credential/
+CSV/
 build/
 develop-eggs/
 dist/

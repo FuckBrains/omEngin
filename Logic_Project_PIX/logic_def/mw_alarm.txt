@@ -1,0 +1,7 @@
+2.HUW-TX-MW LINK DOWN - **(MW_LOF)
+5.HUW-MW_RDI - **
+7.HUW-NE_COMMU_BREAK (raised before or after following 2 and 5)
+8.HUW-NE_NOT_LOGIN (raised before or after following 2 and 5)
+HUW-LOSS OF FRAME ON RECEIVING LINE (R_LOF)
+
+'HUW-TX-MW LINK DOWN','HUW-MW_RDI','HUW-NE_COMMU_BREAK','HUW-NE_NOT_LOGIN',''
