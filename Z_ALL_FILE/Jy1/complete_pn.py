@@ -1,0 +1,155 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[4]:
+
+
+import pandas as pd
+import cx_Oracle
+import time
+import os
+from datetime import date
+import omdtfn as odt
+
+pt = os.getcwd()
+today = date.today()
+omdb = os.getcwd() + "\\" + "OMDB.csv"
+ExTime = int(time.strftime("%M"))
+print(ExTime)
+
+TS = lambda x : '2G' if ('2G SITE DOWN' in x)                 else ('3G' if ('3G SITE DOWN' in x)                 else ('4G' if ('4G SITE DOWN' in x)                 else ('MF' if ('MAIN' in x)                 else ('DC' if ('VOLTAGE' in x)                 else ('TM' if ('TEMPERATURE' in x)                 else ('SM' if ('SMOKE' in x)                 else ('GN' if ('GEN' in x)                 else ('GN' if ('GENSET' in x)                 else ('TH' if ('THEFT' in x)                 else ('CELL' if ('CELL' in x)                 else "NA"))))))))))
+
+def timex():
+    t = time.localtime()
+    curr_tm = time.strftime("%H%M", t)
+    return curr_tm
+
+def qry_tg(tbl,usr, pas, selcol):
+    conn = cx_Oracle.connect(usr, pas, 'ossam-cluster-scan.robi.com.bd:1721/RBPB.robi.com.bd')
+    print(conn.version)
+    tim = time.localtime()
+    foldr = os.getcwd() + "\\download\\" + today.strftime('%m%d%y') + time.strftime("%H%M", tim) + '_' + tbl + '.csv'
+    dy_p = odt.day_minus(7)
+    dy_f = odt.day_plus(1)
+    Q1 = "FROM " + tbl + " WHERE TYPE=1 AND Severity BETWEEN 1 AND 5 "
+    Q2 = "AND (LASTOCCURRENCE BETWEEN TO_DATE('" + dy_p + "','DD-MM-RRRR') AND TO_DATE('" + dy_f + "','DD-MM-RRRR'))"
+    QF = "SELECT" + selcol + Q1 + Q2
+    print(QF)
+    print('----------------')
+    print(timex())
+    df = pd.read_sql(QF, con=conn)
+    print(timex())
+    df2g = df[df['SUMMARY'].str.contains('2G SITE DOWN')]
+    df3g = df[df['SUMMARY'].str.contains('3G SITE DOWN')]
+    df4g = df[df['SUMMARY'].str.contains('4G SITE DOWN')]
+    dfmf = df[df['SUMMARY'].str.contains('MAIN')]
+    dfdl = df[df['SUMMARY'].str.contains('DC LOW')]
+    dftmp = df[df['SUMMARY'].str.contains('TEMP')]
+    dfcell = df[df['SUMMARY'].str.contains('CELL DOWN')]
+    dfth = df[df['SUMMARY'].str.contains('ERI-RRU THEFT')]
+    df_cnct = [df2g,df3g,df4g,dfmf,dfdl,dftmp,dfcell,dfth]
+    df_all = pd.concat(df_cnct)
+    conn.close()
+    return df_all.to_dict()
+
+
+def write2txt(flname, txt):
+    fo = open(flname, "w+")
+    txt = fo.write(txt)
+    fo.close()
+
+
+class omdf:
+    def __init__(self, dic):
+        self.df = pd.DataFrame(dic)
+        self.arr = self.df.to_numpy()
+        self.lst = list(self.df.columns.values)
+        self.aList = []
+
+    def df_addcol_lamda(self):
+        self.df['cat'] = self.df.apply(lambda row: TS(row.Summary), axis=1)
+        return self.df.to_dict()
+
+    def df_addcol_fdic(self, d, newcolname):
+        self.df[newcolname] = self.df['scode'].map(d)
+        return self.df.to_dict()
+
+    def df_apply_on_col(self, newcolname):
+        self.df[newcolname] = self.df.apply(lambda x: x.CustomAttr15[0:5], axis=1)
+        return self.df.to_dict()
+
+    def df_remove_col_by_list(self, lis):
+        ndf = self.df[lis]
+        return ndf.to_dict()
+
+
+def PN_Format(dic, lis):
+    ndf = pd.DataFrame(dic)
+    ar = ndf.to_numpy()
+    lcol = (ar).shape[1]
+    j = 0
+    G2T = 0
+    G3T = 0
+    G4T = 0
+    heap = ""
+    for i in lis:
+        g2 = ndf[ndf['cat'].str.contains('2G') & ndf['Zone'].str.contains(lis[j])]
+        g3 = ndf[ndf['cat'].str.contains('3G') & ndf['Zone'].str.contains(lis[j])]
+        g4 = ndf[ndf['cat'].str.contains('4G') & ndf['Zone'].str.contains(lis[j])]
+        G2T = g2.shape[0] + G2T
+        G3T = g3.shape[0] + G3T
+        G4T = g4.shape[0] + G4T
+        hd = str(lis[j]) + ": " + str(g2.shape[0]) + "/" + str(g3.shape[0]) + "/" + str(g4.shape[0])
+        if j == 0:
+            heap = hd
+        else:
+            heap = heap + '\n' + hd
+        j = j + 1
+    reg = 'Region: ' + '2G/3G/4G'
+    Nat = 'National: ' + str(G2T) + '/' + str(G3T) + '/' + str(G4T)
+    heaps = reg + '\n' + Nat + '\n' + '\n' + heap
+    return heaps
+
+
+def PN(dicc):
+    ls1 = ['CustomAttr15', 'EQUIPMENTKEY', 'Summary', 'LastOccurrence', 'CUSTOMATTR24']
+    ls2 = ['Code', 'Zone']
+    dfsingle = pd.DataFrame(dicc)
+    dfomdb = pd.read_csv(omdb)
+    dfs = dfsingle[ls1]
+    dfdb = dfomdb[ls2]
+    x1 = omdf(dfs)
+    dfs1 = x1.df_addcol_lamda()
+    x2 = omdf(dfs1)
+    dfs2 = pd.DataFrame(x2.df_apply_on_col('Code'))
+    mergedDf = dfs2.merge(dfdb, on='Code')
+    dff = mergedDf[mergedDf['CUSTOMATTR24'].str.contains('YES')]
+    ls3 = ['DHK_S', 'DHK_N', 'DHK_M', 'CTG_S', 'CTG_N', 'CTG_M', 'COM', 'NOA', 'SYL', 'MYM', 'BAR', 'KHL', 'KUS', 'RAJ',
+           'RANG']
+    txt = PN_Format(dff.to_dict(), ls3)
+    write2txt(pntxt, txt)
+    return txt
+
+dic = qry_tg('SEMHEDB.ALERTS_STATUS','SOC_READ','soc_read',' * ')
+df = pd.DataFrame(dic)
+print(df.shape[0])
+print(PN(dic))
+
+
+#single = os.getcwd() + "\\" + "single.csv"
+#pntxt = os.getcwd() + "\\" + "Periodic_Notification.txt"
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+

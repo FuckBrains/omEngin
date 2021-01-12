@@ -1,0 +1,47 @@
+import time as tm
+import pandas as pd
+import numpy as np
+from datetime import *
+import os
+import oDT as dtx
+
+
+def DateDiff(df, newcol, col1, col2 = False, DayFirst = True):
+    if col2 == False:
+        lscol = df[col1].to_list()
+        try:
+            ls = list(map (lambda x: ((datetime.now() - datetime.strptime(x, "%d/%m/%Y %H:%M")).total_seconds())/60, lscol))
+        except:
+            ls = list(map (lambda x: ((datetime.now() - datetime.strptime(x, "%Y/%m/%d %H:%M")).total_seconds())/60, lscol))
+            df1 = fnx.add_col_df(df, 'newcol')
+            df1[newcol] = np.array(ls)
+    else:
+        lscol1 = df[col1].to_list()
+        lscol2 = df[col2].to_list()
+        ls = list(map (lambda x , y: ((datetime.strptime(x, "%d/%m/%Y %H:%M") - datetime.strptime(y, "%d/%m/%Y %H:%M")).total_seconds())/60 if ('1970' not in str(y)) else "0", lscol2,lscol1))
+        df1 = fnx.add_col_df(df, 'newcol')
+        df1[newcol] = np.array(ls)
+    df[newcol] = df[newcol].astype(float).round(2)
+    return df
+        
+
+
+df = pd.read_csv(os.getcwd() + "\\csv\\TIME_TEST.csv", low_memory=False)
+df = df.astype(str)
+lscol = df['LASTOCCURRENCE'].to_list()
+#ls = list(map (lambda x: ((datetime.now() - datetime.strptime(x, "%d/%m/%Y %H:%M")).total_seconds())/60, lscol))
+#ls = list(map (lambda x: ((datetime.now() - datetime.strptime(x, "%Y/%m/%d %H:%M")).total_seconds())/60, lscol))
+df[col1] = df['LASTOCCURRENCE'].apply(lambda x : pd.to_datetime(x, errors='coerce', dayfirst = True, cache=True).strftime("%Y/%m/%d %H:%M:%S"))
+print(ls)
+#df3['DUR']
+#try:
+#    df3 = DateDiff (df, "DUR", "LASTOCCURRENCE")
+#except:
+#    df3 = datediff_ondf (df, "DUR", 'LASTOCCURRENCE')
+#print(df3.columns)
+
+df3
+
+
+
+

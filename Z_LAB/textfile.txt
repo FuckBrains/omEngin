@@ -1,0 +1,13 @@
+D:\omEngin\OmProject\OmNotes\omdic.ipynb
+D:\omEngin\OmProject\OmPY\omfn\df_dic.py
+D:\omEngin\OmProject\OmPY\omfn\df_dict.py
+D:\omEngin\OmProject\OmPY\omfn\df_dict_list.py
+D:\omEngin\OmProject\OmPY\omfn\pydict.ipynb
+D:\omEngin\OmProject\OmPY\omfn\py_pd_np_dic_lst.ipynb
+D:\omEngin\OmProject\OmPY\omfn3\diclistnp.ipynb
+D:\omEngin\OmProject\OmPY\omfn3\pkg\om_dic_list.ipynb
+D:\omEngin\TBOT\omfn\df_dic.py
+D:\omEngin\TBOT\omfn\df_dict.py
+D:\omEngin\TBOT\omfn\df_dict_list.py
+D:\omEngin\TBOT\omfn\pydict.ipynb
+D:\omEngin\TBOT\omfn\py_pd_np_dic_lst.ipynb
