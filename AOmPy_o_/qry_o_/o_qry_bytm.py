@@ -30,7 +30,7 @@ def tmx(t1=False):
         print("Stat Time: ", dtst)
         return nw
     else:
-        x = (parse("22-12-2020 01:05") - datetime.now()).seconds / 60
+        x = (abs(t1 - nw)).seconds / 60
         print("End Time: ", dtst)
         print("Time Consumed: ", x, " mins")
         
@@ -39,10 +39,14 @@ def qryex(qr = False, flname = fl):
     conn = cx_Oracle.connect ('SOC_READ','soc_read', 'ossam-cluster-scan.robi.com.bd:1721/RBPB.robi.com.bd')
     print (conn.version)
     q = ""
+    try:
+        col = sem_view_filter_cols()
+    except:
+        col = '*'
     if qr == False:
-        q1 = "select " + sem_view_filter_cols() + " FROM SEMHEDB.ALERTS_STATUS_V_FULL  Where SEVERITY>0"
+        q1 = "select " + col + " FROM SEMHEDB.ALERTS_STATUS_V_FULL  Where SEVERITY>0"
     else:
-        q1 = "select " + sem_view_filter_cols() + " FROM SEMHEDB.ALERTS_STATUS_V_FULL WHERE " + str(qr)
+        q1 = "select " + col + " FROM SEMHEDB.ALERTS_STATUS_V_FULL WHERE " + str(qr)
     print(q1)
     st = tmx()
     df = pd.read_sql(q1, con = conn)
@@ -51,12 +55,15 @@ def qryex(qr = False, flname = fl):
     conn.close()
     return df
     
-def timebetween(t1,t2):
+def timebetween(t1,t2,name_t1='LASTOCCURRENCE',db='oracle'):
     d1 = parse(t1)
     d2 = parse(t2)
-    print(type(d1))
-    dd = "LASTOCCURRENCE BETWEEN TO_DATE('" + d1.strftime("%d-%m-%Y %H:%M:%S") + "','DD-MM-YYYY HH24:MI:SS') AND TO_DATE('" +  d2.strftime("%d-%m-%Y %H:%M:%S") + "','DD-MM-YYYY HH24:MI:SS')"
-    return dd
+    if db == 'oracle':
+        dd = name_t1 + " BETWEEN TO_DATE('" + d1.strftime("%d-%m-%Y %H:%M:%S") + "','DD-MM-YYYY HH24:MI:SS') AND TO_DATE('" +  d2.strftime("%d-%m-%Y %H:%M:%S") + "','DD-MM-YYYY HH24:MI:SS')"
+        return dd
+    else:
+        dd = name_t1 + ' BETWEEN ' + d1 + ' and ' + d2
+        return dd
     
 def qmain():
     x3 = timebetween("17-12-2020 00:00","19-12-2020 23:59")

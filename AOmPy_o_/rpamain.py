@@ -12,10 +12,12 @@ def format_one(df = False):
         print(df.shape[0])
     xx = RPA(df)
     xx.csvmap(os.getcwd() + "\\csv_o_\\vipsite.csv",'CUSTOMATTR15')
-    #xx.timecal('LASTOCCURRENCE')
-    #xx.timefmt('DUR','%H:%M:%S')
-    #xx.add_cond('sZone',zn)
+    xx.timecal('LASTOCCURRENCE')
+    xx.timefmt('DUR','%H:%M:%S')
+    xx.add_cond('sZone',zn)
     xx.add_cond('CAT',['2G','3G','4G'])
     xx.apply_cond(['Company'], condition='NA', operation='remove') 
     xx.msgitems(['CUSTOMATTR15','LASTOCCURRENCE','Company'])
     xx.rpagen()
+    
+    

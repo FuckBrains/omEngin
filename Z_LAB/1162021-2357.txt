@@ -1,0 +1,883 @@
+
+
+###D:\omEngin\Z_LAB\DW\8282020-2057-XAQ-pydict.py###
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[ ]:
+
+
+
+
+
+# In[2]:
+
+
+import pandas as pd
+
+def pr_all_row_dict(dic):
+    for rw in dic.values():
+        print(rw)
+
+def pr_all_col_dict(dic):
+    print(dic)(1)
+    #for col in dic:
+        #print(col)[0]
+
+def pr_spfc_col_dict(dic,index):
+    print(dic.values())
+    print(dic.items())
+
+dict1 = {'col0':('zero_1','zero_2'),'col1':'one', 2:'two'}
+#pr_all_row_dict(dict1)
+#pr_all_col_dict(dict1)
+pr_spfc_col_dict(dict1,0)
+
+
+
+#for col in dic.items():
+    #print(col)
+
+#for val in dic:
+    #print(val)
+
+    
+#print(dic['Site_Code'])   #colname=sitecode
+#index = 2
+#print(dic['Site_Code'][index])   #colname=sitecode
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[86]:
+
+
+#df to dic
+import pandas as pd
+filename = 'Book1.csv'
+df = pd.read_csv(filename)
+dic = df.to_dict()
+#print(df)
+#print(dic)
+#for col in dic:  #print header
+    #print(col)
+#for rw in dic.values():  #print header
+    #print(rw)
+#for col in dic.items():
+    #print(dic['Site_Code'])
+print(dic['Site_Code'])   #colname=sitecode
+index = 2
+print(dic['Site_Code'][index])   #colname=sitecode
+#for i in dic.values():
+    #j = j + 1
+    #print(j)
+   # print(dic['Site_Code'][j])
+    
+#for i in dic:
+    #print(i)
+#for i in dic.values():
+    #print(i)
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+$$$$$$$$$
+
+
+###D:\omEngin\Z_LAB\DW\8302020-176-XAQ-py_pd_np_dic_lst.py###
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[118]:
+
+
+import pandas as pd
+import numpy as np
+
+def str_manip():
+    txt = "Hello, welcome to my world.8"
+    x = txt.find(" ")  #find space at first occ
+    y = txt.rfind(" ")	#find space at last occ
+    ln = len(txt)	#find length of string
+    cnt_space = txt.count(" ")  #find count of a string/char in string
+    print(x)
+    print(y)
+    print(ln)
+    print('count of space: ', cnt_space)
+    print('return from char 5 to last', txt[5:]) 
+    print('return from char 5 to first: ', txt[:5])
+    print('return from char 6 to 10: ', txt[6:10])
+    if 'to ' in txt:
+        print('yes')
+    else:
+        print('no')
+    print('convert lower case: ', txt.casefold())
+    print('return true if end with xxx: ', txt.endswith('8'))
+    print(txt.replace("world", "earth"))
+    # isnumeric() , isalnum(), replace()
+
+def fn_list(ls):
+    #print(ls)
+    lengt = len(ls)
+    for index, value in enumerate(ls): 
+        print(index)
+        #print(value)
+        #col = 0
+        #print(value[col])
+        #print(len(value[1]))
+def fn_nparr(ar):
+    #print(ar)
+    ar2df = pd.DataFrame(data=ar,columns=["c1", "c2","c3","c4","c5"])
+    #print(ar2df)
+    print('num of rows: ', (ar).shape[0])
+    print('num of column: ', (ar).shape[1])
+    #print(ar[0][1])  #----Acessing value by index
+    #print(ar[0][2])   #----Acessing value by index
+    i = 0
+    print(ar.size)
+    while i < ar.shape[1]:
+        print(ar[i][0])   #printing rows values for column 0
+        i = i + 1
+        if(i == ar.size):
+            print(i)
+            break
+            
+def fn_dict(dc):
+    #print(dc)
+    key_colname = 'Site_Code'
+    #print(dc[key_colname])         #--printall values under keys/column site code
+    #print(dc[key_colname][1])      #--print value in index 1
+    #first_col_key = list(dc.keys())[0]
+    #print(first_col_key)
+    i = 0
+    for txt in dc.keys():
+        i = i + 1
+        if "All_Tech" in txt:
+            break
+
+def mat_col(dic,srcstr):
+    i = 0
+    for txt in dic.keys():
+        i = i + 1
+        if srcstr in txt:
+            break
+    return i
+        
+filename = 'Book1.csv'
+df = pd.read_csv(filename)
+arr = df.to_numpy()
+dic = df.to_dict()
+lst = df.values.tolist()
+#fn_list(lst)  #--succ
+#fn_dict(dic)  #--succ
+xx = mat_col(dic,"Site_Code")
+print(xx)
+#fn_nparr(arr)  #--succ
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+$$$$$$$$$
+
+
+###D:\omEngin\Z_LAB\DW\df_dic.py###
+import MySQLdb
+import pandas as pd
+try:
+    conn= MySQLdb.connect("localhost","root","admin","omdb")
+except:
+    print("Can't connect to database")
+#cursor = conn.cursor()
+
+
+
+
+
+
+
+
+#filename = os.getcwd() + '//inc.csv'
+#df = pd.read_csv(filename)
+##dic = df.to_dict()
+$$$$$$$$$
+
+
+###D:\omEngin\Z_LAB\DW\df_dict.py###
+#df to dic
+import pandas as pd
+filename = 'Book1.csv'
+df = pd.read_csv(filename)
+dic = df.to_dict()
+#print(df)
+#print(dic)
+#for col in dic:  #print header
+    #print(col)
+#for rw in dic.values():  #print header
+    #print(rw)
+#for col in dic.items():
+    #print(dic['Site_Code'])
+j = 0
+for i in dic.values():
+    j = j + 1
+    #print(j)
+   # print(dic['Site_Code'][j])
+    
+#for i in dic:
+    #print(i)
+#for i in dic.values():
+    #print(i)
+$$$$$$$$$
+
+
+###D:\omEngin\Z_LAB\DW\df_dict_list.py###
+import pandas as pd
+filename = 'Book1.csv'
+dic = {0:'zero',1:'one',2:'two'}
+print(dic)
+def df_2_lst():
+    lst = df.values.tolist()
+    
+def df_2_dic():
+    dic = df.to_dict()
+
+def df_2_series():
+    dic = df.to_dict()
+    
+def df_2_numpy_arr():
+    dic = df.to_dict()
+    
+dfrm = pd.read_csv(filename)
+df = pd.DataFrame(list(dic.items()))
+dic1 = df.to_dict()
+
+print(df)
+#print_from_lst()
+#print_from_dic()
+$$$$$$$$$
+
+
+###D:\omEngin\Z_LAB\DW\diclistnp.py###
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[ ]:
+
+
+import pandas as pd
+import numpy as np
+import os
+from datetime import date
+import itertools
+
+cols = ["Resource","CustomAttr15","Summary","LastOccurrence","CustomAttr11"] #Range [A-E]
+single = os.getcwd() + "\\" + "single.csv"
+dff = pd.read_csv(single)
+df = dff[cols]
+print(df)
+
+
+# ### Numpy  [from df, to dic, to list]
+
+# In[ ]:
+
+
+arr = df.to_numpy()  #convert df to np
+print(arr[0][0])   #printing an index value of numpy arr
+rw, col = arr.shape #last row, last column
+print(rw,col)
+
+#loop and access
+lst = []
+dic = {}
+for i in range(rw):
+    lst2 = []
+    for j in range(col):
+        #print(arr[i][j])      #print Row by index
+        lst2.append(arr[i][j]) #create a list
+    dic.update( {i : lst2} ) #create dict
+#print(dic)
+
+
+# ### Numpy [add col from list]
+
+# In[ ]:
+
+
+#add new column derived from existing one
+lst3 = []
+for i in range(rw):
+    x = arr[i][2] #only printing summary
+    if 'DOWN' in x:
+        lst3.append('down')
+    else:
+        lst3.append('no')
+arr = np.append(arr, np.array([lst3]).transpose(), axis=1)
+df = pd.DataFrame(arr)
+print(df)
+
+
+# # List
+
+# In[ ]:
+
+
+#derived list from df
+dff = pd.Series(df['CustomAttr15'])
+mlst1 = dff.to_list()
+mlst2 = df.values.tolist()
+mlst3 = df.columns.values.tolist()
+mlst4 = df['Summary'].values.tolist()
+mlst5 = df[['Summary','LastOccurrence']].values.tolist()
+#print(mlst4)
+
+def lp_1d_list(mlst1):
+    i = 0
+    for i in range(len(mlst1)):
+        print(mlst1[i])
+        i = i + 1
+def lp_nested_seperate_2_list(mlst1,mlst4):
+    for a in mlst1:
+        for b in mlst4:
+            print(a,">",b)
+def lp_nested_list(mlst2):
+    for i in range(len(mlst2)):
+        for j in range(len(mlst2[i])):
+            print(mlst2[i][j])
+
+# List Methods append(), count(), index(), pop(), sort()
+fruits = ['apple', 'banana', 'cherry','banana']
+fruits.append("orange")
+print(fruits)
+print(fruits.count("banana"))
+print(fruits.index("cherry"))
+fruits = ['apple', 'banana', 'cherry']
+cars = ['Ford', 'BMW', 'Volvo']
+fruits.extend(cars)
+print(fruits) #JOIN 2 LIST
+fruits = fruits.pop(1)
+print(fruits)fruits.extend(cars)
+
+
+# # dictionary
+
+# In[ ]:
+
+
+dic1 = {}
+dic2 = {1: 'apple', 2: 'ball'}
+dic3 = {'name': 'John', 1: [2, 4, 3]}
+dic4 = dict({1:'apple', 2:'ball'})
+dic5 = dict([(1,'apple'), (2,'ball')])
+
+#create dictionary from 2 list (as key , as value)
+dlist = dict(zip(mlst1, mlst5))
+#print(dlist)
+
+#dataframe to dictionary
+ddf1 = df.to_dict()
+
+def lp_dic(ddf1):
+    for key in ddf1:
+        print(key,ddf1[key])
+    for v in ddf1.values():
+        print(v)
+def lp_key_wise(dl):
+    for k,v in dlist.items():
+        print("STCODE:", k, ":", v[0],',', v[1])
+        
+lp_key_wise(dlist)
+#Method of Dictionary fromkeys(), get(), items(), keys(), values(), pop(), update()
+person = {'name': 'Phill', 'age': 22}
+#print(person.get('name'))
+
+d = {1: "one", 2: "three"}
+d1 = {2: "two"}
+d.update(d1)
+#print(d)
+
+person = {'name': 'Phill'}
+person.setdefault('age', 22)
+#print(person)
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+$$$$$$$$$
+
+
+###D:\omEngin\Z_LAB\DW\omdic.py###
+#!/usr/bin/env python
+# coding: utf-8
+
+# ##### Create Dictionary
+
+# In[4]:
+
+
+dc1 = {'1': 'uno', '2': 'dos', '3': 'tres'}
+dc2 = {'1': ['A','B'], '2': ['J','K'],'3':['X','Y']}
+dc3 = {('a','b','c'),('x','y','z')}
+
+
+# ##### Accessing Dic => Keys(), values(), Items() 
+
+# In[5]:
+
+
+print(dc2.keys())
+print(dc2.values())
+print(dc2.items())
+
+
+# ##### merging 3 dictionary
+
+# In[16]:
+
+
+A = {'x': 10, 'y': 20}
+B = {'y': 30, 'z': 40}
+A.update(B)
+A.update({'m':100,'n':200})
+print(A)
+
+
+# ##### Method => get()
+
+# In[ ]:
+
+
+print(A.get('x'))
+
+
+# ##### create dictionary merging 2 list
+
+# In[22]:
+
+
+ls1 = ['1','2','3']
+ls2 = ['a','b','c']
+dc5 = {1: ls1, 2: ls2}
+print(dc5)
+
+
+# In[ ]:
+
+
+
+
+
+$$$$$$$$$
+
+
+###D:\omEngin\Z_LAB\DW\om_dic_list.txt###
+import pandas as pd
+import numpy as np
+import os
+from datetime import date
+import itertools
+
+cols = ["Resource","CustomAttr15","Summary","LastOccurrence","CustomAttr11"] #Range [A-E]
+single = os.getcwd() + "\\" + "single.csv"
+dff = pd.read_csv(single)
+df = dff[cols]
+
+
+
+#derived list from df
+dff = pd.Series(df['CustomAttr15'])
+mlst1 = dff.to_list()
+mlst2 = df.values.tolist()
+mlst3 = df.columns.values.tolist()
+mlst4 = df['Summary'].values.tolist()
+mlst5 = df[['Summary','LastOccurrence']].values.tolist()
+#print(mlst4)
+
+def lp_1d_list(mlst1):
+    i = 0
+    for i in range(len(mlst1)):
+        print(mlst1[i])
+        i = i + 1
+def lp_nested_seperate_2_list(mlst1,mlst4):
+    for a in mlst1:
+        for b in mlst4:
+            print(a,">",b)
+def lp_nested_list(mlst2):
+    for i in range(len(mlst2)):
+        for j in range(len(mlst2[i])):
+            print(mlst2[i][j])
+
+# List Methods append(), count(), index(), pop(), sort()
+fruits = ['apple', 'banana', 'cherry','banana']
+fruits.append("orange")
+print(fruits)
+
+print(fruits.count("banana"))
+print(fruits.index("cherry"))
+
+fruits = ['apple', 'banana', 'cherry']
+cars = ['Ford', 'BMW', 'Volvo']
+fruits.extend(cars)
+print(fruits) #JOIN 2 LIST
+
+fruits = fruits.pop(1)
+print(fruits)
+
+dic1 = {}
+dic2 = {1: 'apple', 2: 'ball'}
+dic3 = {'name': 'John', 1: [2, 4, 3]}
+dic4 = dict({1:'apple', 2:'ball'})
+dic5 = dict([(1,'apple'), (2,'ball')])
+
+#create dictionary from 2 list (as key , as value)
+dlist = dict(zip(mlst1, mlst5))
+#print(dlist)
+
+#dataframe to dictionary
+ddf1 = df.to_dict()
+
+def lp_dic():
+    for key in ddf1:
+        print(key,ddf1[key])
+    for v in ddf1.values():
+        print(v)
+def lp_key_wise(dl):
+    for k,v in dlist.items():
+        print("STCODE:", k, ":", v[0],',', v[1])
+        
+lp_key_wise(dlist)
+#Method of Dictionary fromkeys(), get(), items(), keys(), values(), pop(), update()
+person = {'name': 'Phill', 'age': 22}
+#print(person.get('name'))
+
+d = {1: "one", 2: "three"}
+d1 = {2: "two"}
+d.update(d1)
+#print(d)
+
+person = {'name': 'Phill'}
+person.setdefault('age', 22)
+#print(person)
+
+
+
+
+
+
+
+$$$$$$$$$
+
+
+###D:\omEngin\Z_LAB\DW\pydict.py###
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[ ]:
+
+
+
+
+
+# In[2]:
+
+
+import pandas as pd
+
+def pr_all_row_dict(dic):
+    for rw in dic.values():
+        print(rw)
+
+def pr_all_col_dict(dic):
+    print(dic)(1) 
+    #for col in dic:
+        #print(col)[0]
+
+def pr_spfc_col_dict(dic,index):
+    print(dic.values())
+    print(dic.items())
+
+dict1 = {'col0':('zero_1','zero_2'),'col1':'one', 2:'two'}
+#pr_all_row_dict(dict1)
+#pr_all_col_dict(dict1)
+pr_spfc_col_dict(dict1,0)
+
+
+
+#for col in dic.items():
+    #print(col)
+
+#for val in dic:
+    #print(val)
+
+    
+#print(dic['Site_Code'])   #colname=sitecode
+#index = 2
+#print(dic['Site_Code'][index])   #colname=sitecode
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[86]:
+
+
+#df to dic
+import pandas as pd
+filename = 'Book1.csv'
+df = pd.read_csv(filename)
+dic = df.to_dict()
+#print(df)
+#print(dic)
+#for col in dic:  #print header
+    #print(col)
+#for rw in dic.values():  #print header
+    #print(rw)
+#for col in dic.items():
+    #print(dic['Site_Code'])
+print(dic['Site_Code'])   #colname=sitecode
+index = 2
+print(dic['Site_Code'][index])   #colname=sitecode
+#for i in dic.values():
+    #j = j + 1
+    #print(j)
+   # print(dic['Site_Code'][j])
+    
+#for i in dic:
+    #print(i)
+#for i in dic.values():
+    #print(i)
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+$$$$$$$$$
+
+
+###D:\omEngin\Z_LAB\DW\py_pd_np_dic_lst.py###
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[118]:
+
+
+import pandas as pd
+import numpy as np
+
+def str_manip():
+    txt = "Hello, welcome to my world.8"
+    x = txt.find(" ")  #find space at first occ
+    y = txt.rfind(" ")	#find space at last occ
+    ln = len(txt)	#find length of string
+    cnt_space = txt.count(" ")  #find count of a string/char in string
+    print(x)
+    print(y)
+    print(ln)
+    print('count of space: ', cnt_space)
+    print('return from char 5 to last', txt[5:]) 
+    print('return from char 5 to first: ', txt[:5])
+    print('return from char 6 to 10: ', txt[6:10])
+    if 'to ' in txt:
+        print('yes')
+    else:
+        print('no')
+    print('convert lower case: ', txt.casefold())
+    print('return true if end with xxx: ', txt.endswith('8'))
+    print(txt.replace("world", "earth"))
+    # isnumeric() , isalnum(), replace()
+
+def fn_list(ls):
+    #print(ls)
+    lengt = len(ls)
+    for index, value in enumerate(ls): 
+        print(index)
+        #print(value)
+        #col = 0
+        #print(value[col])
+        #print(len(value[1]))
+def fn_nparr(ar):
+    #print(ar)
+    ar2df = pd.DataFrame(data=ar,columns=["c1", "c2","c3","c4","c5"])
+    #print(ar2df)
+    print('num of rows: ', (ar).shape[0])
+    print('num of column: ', (ar).shape[1])
+    #print(ar[0][1])  #----Acessing value by index
+    #print(ar[0][2])   #----Acessing value by index
+    i = 0
+    print(ar.size)
+    while i < ar.shape[1]:
+        print(ar[i][0])   #printing rows values for column 0
+        i = i + 1
+        if(i == ar.size):
+            print(i)
+            break
+            
+def fn_dict(dc):
+    #print(dc)
+    key_colname = 'Site_Code'
+    #print(dc[key_colname])         #--printall values under keys/column site code
+    #print(dc[key_colname][1])      #--print value in index 1
+    #first_col_key = list(dc.keys())[0]
+    #print(first_col_key)
+    i = 0
+    for txt in dc.keys():
+        i = i + 1
+        if "All_Tech" in txt:
+            break
+
+def mat_col(dic,srcstr):
+    i = 0
+    for txt in dic.keys():
+        i = i + 1
+        if srcstr in txt:
+            break
+    return i
+        
+filename = 'Book1.csv'
+df = pd.read_csv(filename)
+arr = df.to_numpy()
+dic = df.to_dict()
+lst = df.values.tolist()
+#fn_list(lst)  #--succ
+#fn_dict(dic)  #--succ
+xx = mat_col(dic,"Site_Code")
+print(xx)
+#fn_nparr(arr)  #--succ
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+$$$$$$$$$

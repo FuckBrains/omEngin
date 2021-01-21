@@ -51,6 +51,8 @@ def mysql_table_colinfo(db, table, conn):
     dic = dict(dc)
     return dic
 
+
+
 def get_key(my_dict, val):
     for value, key in my_dict.items():
         if value == val:

@@ -2,17 +2,16 @@ import pandas as pd
 import os, datetime, time, pyodbc
 from mysql import *
 from sqlalchemy import create_engine
-import df_to_sql.df_to_sql as insupd
-import create_table.tbl_mysql as myq
-import create_table.tbl_mssql as msq
-#from conn_brocker import *
+import sq_o_.df_to_sql as insupd
+import sq_o_.tbl_mysql as myq
+import sq_o_.tbl_mssql as msq
 
 def mssql_115():
     cstr = "Driver={SQL Server};SERVER=192.168.0.115;DATABASE=SOC_Roster;UID=sa;PWD=1q2w3eaz$"
     conn = pyodbc.connect(cstr)
     return conn
 
-def MsSql(user = 'root', password = 'admin', host = '127.0.0.1:3306', db = "omdb"):
+def MsSql(user = 'sa', password = '1q2w3eaz$', host = '192.168.0.102:1433', db = "master"):
     cstr = "Driver={SQL Server};SERVER=" + host + ";DATABASE=" + db + ";UID=" + user + ";PWD=" + password
     conn = pyodbc.connect(cstr)
     return conn
@@ -57,7 +56,7 @@ def sql2df(tbl):
     return df
 
 #createtable()
-conn = MySql('root','admin','127.0.0.1:3306','omdb')
+conn = MsSql()
 pt = os.getcwd() + "\\sclick2.csv"
 df = pd.read_csv(pt)
 df.to_sql("t13", con = conn)

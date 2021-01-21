@@ -102,7 +102,6 @@ class RPA:
         self.lsky = []
         self.lsvl = []
         self.lsx = []
-        print(self.df.columns)
     def regionwise(self, Name=[]):
         self.msgthread = list(zn_dic())
     def techwise(self):
@@ -144,6 +143,10 @@ class RPA:
             return self.df0
         else:
             return self.df
+    def dfget(self):
+        return self.df
+    def dfset(self, ndf):
+        self.df = ndf
     def sample(self):
         print(self.df.head(5))
     def summary(self):
@@ -231,4 +234,5 @@ class RPA:
         else:
             Lx.append(L1)
 
-
+def __main__():
+    print('all ok')

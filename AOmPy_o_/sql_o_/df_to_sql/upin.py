@@ -1,10 +1,7 @@
 import pandas as pd
 import numpy as np
 import os
-try:
-    from df_to_sql.write2text import *
-except:
-    from write2text import *
+from df_to_sql.write2text import *
 
 
 def drop_cols(df, col2drop = []):
