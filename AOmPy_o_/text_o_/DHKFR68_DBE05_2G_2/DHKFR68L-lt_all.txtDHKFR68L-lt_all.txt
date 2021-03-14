@@ -1,0 +1,20 @@
+
+DHKFR68L> lt all
+
+201231-08:06:44 10.140.77.39 20.0c  stopfile=/tmp/4034
+Trying rbs's password from uservariable com_passwords ...OK
+
+$ssh_pid = 4189
+
+Connected to 10.140.77.39 (SubNetwork=ONRM_ROOT_MO,SubNetwork=LTE,MeContext=DHKFR68L,ManagedElement=DHKFR68L)
+
+Checking MOM version...MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace
+Parsing MOM (cached): /var/tmp/20201231-080639_3979/MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace.xml.cache.gz ....................................................................................................................Done.
+Using paramfile /opt/ericsson/amos/moshell/commonjars/pm/PARAM_MSRBS_18.Q4.txt
+Parsing file /opt/ericsson/amos/moshell/commonjars/pm/PARAM_MSRBS_18.Q4.txt ....................................................................Done.
+Using imomdfile /opt/ericsson/amos/moshell/commonjars/pm/IMOMD_MSRBS_18.Q3.txt
+Using imomfile /opt/ericsson/amos/moshell/commonjars/pm/IMOM_MSRBS_18.Q3.txt
+Connected to 10.140.77.39 (SubNetwork=ONRM_ROOT_MO,SubNetwork=LTE,MeContext=DHKFR68L,ManagedElement=DHKFR68L)
+alt
+
+Last MO: 10584. Loaded 10584 MOs. Total: 10585 MOs.

@@ -1,0 +1,15 @@
+
+DHKFR68L> get . Isshared
+
+201231-08:07:47 10.140.77.39 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/4034
+=================================================================================================================
+MO                                                      Attribute         Value
+=================================================================================================================
+FieldReplaceableUnit=1                                  isSharedWithExternalMe false
+FieldReplaceableUnit=RRU-1                              isSharedWithExternalMe true
+FieldReplaceableUnit=RRU-2                              isSharedWithExternalMe true
+FieldReplaceableUnit=RRU-2_B3_1                         isSharedWithExternalMe true
+FieldReplaceableUnit=RRU-3                              isSharedWithExternalMe true
+FieldReplaceableUnit=SAU                                isSharedWithExternalMe 
+=================================================================================================================
+Total: 6 MOs

@@ -1,0 +1,802 @@
+
+              
+           
+WARNING: the AMOS version currently running is more than 46 weeks old.
+It is recommended to always use the latest released moshell version.
+To obtain the latest released version contact your local Ericsson support.
+
+$amosrb_pid = 4091
+
+Checking ip contact...OK
+
+HELP MENU            : h
+BASIC MO COMMANDS    : m
+OTHER MO COMMANDS    : n
+OTHER COMMANDS       : o
+PM COMMANDS          : p
+QUIT                 : q
+
+DHKFR68L> lt all
+
+201231-08:06:44 10.140.77.39 20.0c  stopfile=/tmp/4034
+Trying rbs's password from uservariable com_passwords ...OK
+
+$ssh_pid = 4189
+
+Connected to 10.140.77.39 (SubNetwork=ONRM_ROOT_MO,SubNetwork=LTE,MeContext=DHKFR68L,ManagedElement=DHKFR68L)
+
+Checking MOM version...MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace
+Parsing MOM (cached): /var/tmp/20201231-080639_3979/MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace.xml.cache.gz ....................................................................................................................Done.
+Using paramfile /opt/ericsson/amos/moshell/commonjars/pm/PARAM_MSRBS_18.Q4.txt
+Parsing file /opt/ericsson/amos/moshell/commonjars/pm/PARAM_MSRBS_18.Q4.txt ....................................................................Done.
+Using imomdfile /opt/ericsson/amos/moshell/commonjars/pm/IMOMD_MSRBS_18.Q3.txt
+Using imomfile /opt/ericsson/amos/moshell/commonjars/pm/IMOM_MSRBS_18.Q3.txt
+Connected to 10.140.77.39 (SubNetwork=ONRM_ROOT_MO,SubNetwork=LTE,MeContext=DHKFR68L,ManagedElement=DHKFR68L)
+alt
+
+Last MO: 10584. Loaded 10584 MOs. Total: 10585 MOs.
+
+DHKFR68L> alt
+
+201231-08:06:56 10.140.77.39 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/4034
+
+Collecting Alarms...
+
+====================================================================================================================
+Date & Time (UTC)   S Specific Problem                    MO (Cause/AdditionalInfo)
+====================================================================================================================
+2020-12-28 09:44:58 m External Link Failure               ENodeBFunction=1 (X2 link problem to one or several neighbouring eNodeBs. AI: PLMN ID-eNB ID 1 : 4702-132066,PLMN ID-eNB ID 2 : 4702-130404,PLMN ID-eNB ID 3 : 4702-130398,PLMN ID-eNB ID 4 : 4702-130378,PLMN ID-eNB ID 5 : 4702-130372,PLMN ID-eNB ID 6 : 4702-130362,PLMN ID-eNB ID 7 : 4702-131139,PLMN ID-eNB ID 8 : 4702-132054,PLMN ID-eNB ID 9 : 4702-132042,PLMN ID-eNB ID : list truncated)
+2020-12-28 13:42:11 w Calendar Clock NTP Server Unavailable SysM=1,TimeM=1,Ntp=1,NtpServer=2 (Configured NTP server is not used as basis for time of day clock)
+>>> Total: 2 Alarms (0 Critical, 0 Major)
+
+DHKFR68L> st cell
+
+201231-08:06:59 10.140.77.39 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/4034
+===================================================================================
+Proxy  Adm State     Op. State     MO
+===================================================================================
+   38  1 (UNLOCKED)  1 (ENABLED)   ENodeBFunction=1,EUtranCellFDD=DHKFR68LA
+  423  1 (UNLOCKED)  1 (ENABLED)   ENodeBFunction=1,EUtranCellFDD=DHKFR68LB
+  710  1 (UNLOCKED)  1 (ENABLED)   ENodeBFunction=1,EUtranCellFDD=DHKFR68LC
+===================================================================================
+Total: 3 MOs
+
+DHKFR68L> get memb
+
+201231-08:07:03 10.140.77.39 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/4034
+=================================================================================================================
+10474                                SystemFunctions=1,SysM=1,Schema=RsyncNodeGroupSyncMember
+=================================================================================================================
+baseModelIdentifier                  
+baseModelVersion                     
+identifier                           RsyncNodeGroupSyncMember
+schemaId                             RsyncNodeGroupSyncMember
+selectedModelOptions                 s[0] = 
+version                              1.7.0
+=================================================================================================================
+10575                                Transport=1,Synchronization=1,RadioEquipmentClock=1,NodeGroupSyncMember=1
+=================================================================================================================
+administrativeState                  1 (UNLOCKED)
+localNodeInformation                 Struct{3}
+ >>> 1.hopsFromSyncProvider = 0
+ >>> 2.localState = 1 (SYNC_PROVIDER)
+ >>> 3.synchronizedTo = 1
+nodeGroupSyncMemberId                1
+selectionMode                        1 (NODE_PRIORITY)
+syncNodePriority                     1
+syncProviderInformation              Struct{2}
+ >>> 1.syncProviderNodePriority = 1
+ >>> 2.syncProviderState = 2 (FREQUENCY_MODE)
+syncRiPortCandidate                  [3] = 
+ >>> syncRiPortCandidate = Equipment=1,FieldReplaceableUnit=1,RiPort=A
+ >>> syncRiPortCandidate = Equipment=1,FieldReplaceableUnit=1,RiPort=B
+ >>> syncRiPortCandidate = Equipment=1,FieldReplaceableUnit=1,RiPort=C
+syncRiPortStatus                     i[3] = 2 2 2 (OK_NOT_ACTIVE OK_NOT_ACTIVE OK_NOT_ACTIVE)
+userLabel                            
+=================================================================================================================
+Total: 2 MOs
+
+
+DHKFR68L> st rru
+
+201231-08:07:17 10.140.77.39 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/4034
+===================================================================================
+Proxy  Adm State     Op. State     MO
+===================================================================================
+ 2336  1 (UNLOCKED)  1 (ENABLED)   Equipment=1,FieldReplaceableUnit=RRU-1
+ 2344  1 (UNLOCKED)  1 (ENABLED)   Equipment=1,FieldReplaceableUnit=RRU-2
+ 2352  1 (UNLOCKED)  1 (ENABLED)   Equipment=1,FieldReplaceableUnit=RRU-2_B3_1
+ 2362  1 (UNLOCKED)  1 (ENABLED)   Equipment=1,FieldReplaceableUnit=RRU-3
+===================================================================================
+Total: 4 MOs
+
+DHKFR68L> get . Isshared
+
+201231-08:07:47 10.140.77.39 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/4034
+=================================================================================================================
+MO                                                      Attribute         Value
+=================================================================================================================
+FieldReplaceableUnit=1                                  isSharedWithExternalMe false
+FieldReplaceableUnit=RRU-1                              isSharedWithExternalMe true
+FieldReplaceableUnit=RRU-2                              isSharedWithExternalMe true
+FieldReplaceableUnit=RRU-2_B3_1                         isSharedWithExternalMe true
+FieldReplaceableUnit=RRU-3                              isSharedWithExternalMe true
+FieldReplaceableUnit=SAU                                isSharedWithExternalMe 
+=================================================================================================================
+Total: 6 MOs
+
+
+DHKFR68L> get . maxtx
+
+201231-08:08:06 10.140.77.39 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/4034
+=================================================================================================================
+MO                                                      Attribute         Value
+=================================================================================================================
+SectorCarrier=11                                        configuredMaxTxPower 80000
+SectorCarrier=12                                        configuredMaxTxPower 120000
+SectorCarrier=13                                        configuredMaxTxPower 60000
+=================================================================================================================
+Total: 3 MOs
+
+
+DHKFR68L> get . MaxTxPower
+
+201231-08:08:45 10.140.77.39 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/4034
+=================================================================================================================
+MO                                                      Attribute         Value
+=================================================================================================================
+SectorCarrier=11                                        configuredMaxTxPower 80000
+SectorCarrier=12                                        configuredMaxTxPower 120000
+SectorCarrier=13                                        configuredMaxTxPower 60000
+=================================================================================================================
+Total: 3 MOs
+
+
+DHKFR68L> get . TxPower
+
+201231-08:08:54 10.140.77.39 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/4034
+=================================================================================================================
+MO                                                      Attribute         Value
+=================================================================================================================
+SectorCarrier=11                                        configuredMaxTxPower 80000
+SectorCarrier=11                                        txPowerPersistentLock false
+SectorCarrier=12                                        configuredMaxTxPower 120000
+SectorCarrier=12                                        txPowerPersistentLock false
+SectorCarrier=13                                        configuredMaxTxPower 60000
+SectorCarrier=13                                        txPowerPersistentLock false
+=================================================================================================================
+Total: 3 MOs
+
+
+DHKFR68L> invxrg
+
+201231-08:09:34 10.140.77.39 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/4034
+Connected to 10.140.77.39 (SubNetwork=ONRM_ROOT_MO,SubNetwork=LTE,MeContext=DHKFR68L,ManagedElement=DHKFR68L)
+
+Last MO: 10584. Loaded 10584 MOs. Total: 10585 MOs.
+Checking available boards on node...
+
+Collecting RCS board data ...
+..........................................................
+
+.........................................................................................................................................................................................................
+get /rop/A20201231.0115-0130_DHKFR68L.xml.gz /ericsson/log/amos/moshell_logfiles/ka1639/logs_moshell/pmfiles/10.140.77.39/rop/A20201231.0115-0130_DHKFR68L.xml.gz ... OK
+get /rop/A20201231.0130-0145_DHKFR68L.xml.gz /ericsson/log/amos/moshell_logfiles/ka1639/logs_moshell/pmfiles/10.140.77.39/rop/A20201231.0130-0145_DHKFR68L.xml.gz ... OK
+get /rop/A20201231.0145-0200_DHKFR68L.xml.gz /ericsson/log/amos/moshell_logfiles/ka1639/logs_moshell/pmfiles/10.140.77.39/rop/A20201231.0145-0200_DHKFR68L.xml.gz ... OK
+.......
+Collecting TN data...
+...........................................................................................................................
+Collecting RF data...
+.......
+Node: RadioNode L   CXP9024418/6_R55N28 (18.Q4.C6)
+
+=====================================================================================================================================
+FRU        LNH      BOARD      ST FAULT OPER MAINT STAT PRODUCTNUMBER   REV     SERIAL        DATE      TEMP  UPT 
+=====================================================================================================================================
+1          000100   DUS3201     1   OFF   ON   OFF   ON KDU137925/41    R5A     DU50181532    20171124       2.68  (Bb5212)
+RRU-1      BXP_2048 RRU2219B3*  1   OFF   ON   OFF  N/A KRC161619/1     R2C     CD3T945633    20171019  39.5 1.54  (Radio2219B3)
+RRU-2      BXP_2049 RRU2219B3*  1   OFF   ON   OFF  N/A KRC161619/1     R2C     CD3U154474    20171103  25.8 3.47  (Radio2219B3)
+RRU-3      BXP_2050 RRU2219B3*  1   OFF   ON   OFF  N/A KRC161619/1     R2C     CD3U150848    20171103  42.8 3.47  (Radio2219B3)
+RRU-2_B3_1 BXP_2051 RRU4428B3*  1   OFF   ON   OFF  N/A KRC161713/1     R5G     E556209084    20200329  48.0 7.80  (Radio4428B3)
+SAU        Z??_01   SUP6601     1   OFF   ON   N/A  N/A 1/BFL901009/4   R2E     BR85655264    20171019            
+-------------------------------------------------------------------------------------------------------------------------------------
+
+=====================================================================================================================================
+XPBOARD   ST FAULT OPER PRODUCTNUMBER    REV SERIAL/NAME DATE      TEMP MO
+=====================================================================================================================================
+RBS6601                 20/BFL901009/777 R1A D826738164  20171129    27 Cabinet=1
+FANGROUP     OFF                                                        Cabinet=1,FanGroup=1
+-------------------------------------------------------------------------------------------------------------------------------------
+
+=====================================================================================================================================
+ID T RiL    BPBP BOARD1     LNH1 PORT R LINK RATE  BOARD2     LNH2   PORT R LINK RATE  LENGTH MO1 - MO2
+=====================================================================================================================================
+ 1 O      1 1111 DUS3201    000100  1 M Up   2.5G  RRU2219B3* BXP_2048  0 S Up   2.5G     54m Fru=1(A) Fru=RRU-1(D1)
+ 2 O      2 1111 DUS3201    000100  2 M Up   2.5G  RRU2219B3* BXP_2049  0 S Up   2.5G     54m Fru=1(B) Fru=RRU-2(D1)
+ 3 O      3 1111 DUS3201    000100  3 M Up   2.5G  RRU2219B3* BXP_2050  0 S Up   2.5G     54m Fru=1(C) Fru=RRU-3(D1)
+ 4 O 2_B3_1 1111 DUS3201    000100  5 M Up   10.1G RRU4428B3* BXP_2051  0 S Up   10.1G    53m Fru=1(E) Fru=RRU-2_B3_1(D1)
+-------------------------------------------------------------------------------------------------------------------------------------
+
+=====================================================================================================================================
+ID LINK RiL    VENDOR1  VENDORPROD1      REV1 SERIAL1         DATE1    ERICSSONPROD1  VENDOR2  VENDORPROD2      REV2 SERIAL2         DATE2    ERICSSONPROD2 
+=====================================================================================================================================
+ 1 Up        1 DELTA    LCP-2488B4HDRME1 A    1718061A0123178 17050801 RDH10247/2 R2A DELTA    LCP-2488B4HDRME1 A    1718061A0123177 20170508 RDH10247/2 R2A
+ 2 Up        2 DELTA    LCP-2488B4HDRME1 A    1718061A0123184 17050801 RDH10247/2 R2A DELTA    LCP-2488B4HDRME1 A    1718061A0123182 20170508 RDH10247/2 R2A
+ 3 Up        3 DELTA    LCP-2488B4HDRME1 A    1718061A0123181 17050801 RDH10247/2 R2A DELTA    LCP-2488B4HDRME1 A    1718061A0123176 20170508 RDH10247/2 R2A
+ 4 Up   2_B3_1 ERICSSON EOLP-1396-02-I9  1.0  PL2V061392      20200629 RDH10265/2 R1A ERICSSON EOLP-1396-02-I9  1.0  PL2V061370      20200629 RDH10265/2 R1A
+-------------------------------------------------------------------------------------------------------------------------------------
+
+=====================================================================================================================================
+ID LINK RiL    WL1     TEMP1 TXbs1 TXdBm1 RXdBm1 BER1   WL2     TEMP2 TXbs2 TXdBm2 RXdBm2 BER2   DlLoss UlLoss
+=====================================================================================================================================
+ 1 Up        1 1310.00 46C   24%   -5.45  -8.21         1310.00 38C   22%   -5.57  -6.76           1.31   2.64
+ 2 Up        2 1310.00 45C   22%   -5.33  -10.13        1310.00 29C   19%   -5.23  -7.27           1.94    4.9
+ 3 Up        3 1310.00 47C   22%   -5.03  -5.14         1310.00 41C   32%   -5.47  -6.85           1.82  -0.33
+ 4 Up   2_B3_1 1310.00 45C   41%   -2.01  -2.33         1310.00 43C   40%   -2.44  -2.01              0  -0.11
+-------------------------------------------------------------------------------------------------------------------------------------
+
+=====================================================================================================================================
+ID RiL    BOARD      SFPLNH PORT VENDOR   VENDORPROD       REV  SERIAL          DATE     ERICSSONPROD   WL      TEMP  TXbs  TXdBm  RXdBm   BER
+=====================================================================================================================================
+ 1      1 DUS3201    000100    1 DELTA    LCP-2488B4HDRME1 A    1718061A0123178 17050801 RDH10247/2 R2A 1310.00 46C   24%   -5.45  -8.21      
+ 2      2 DUS3201    000100    2 DELTA    LCP-2488B4HDRME1 A    1718061A0123184 17050801 RDH10247/2 R2A 1310.00 45C   22%   -5.33  -10.13     
+ 3      3 DUS3201    000100    3 DELTA    LCP-2488B4HDRME1 A    1718061A0123181 17050801 RDH10247/2 R2A 1310.00 47C   22%   -5.03  -5.14      
+ 4 2_B3_1 DUS3201    000100    5 ERICSSON EOLP-1396-02-I9  1.0  PL2V061392      20200629 RDH10265/2 R1A 1310.00 45C   41%   -2.01  -2.33      
+ 1      1 RRU2219B3* BXP_2048  0 DELTA    LCP-2488B4HDRME1 A    1718061A0123177 20170508 RDH10247/2 R2A 1310.00 38C   22%   -5.57  -6.76      
+          RRU2219B3* BXP_2048  1 DELTA    LCP-2488B4HDRME1 A    1718061A0123179 20170508 RDH10247/2 R2A 1310.00 41C   33%   -5.49  -5.93      
+ 2      2 RRU2219B3* BXP_2049  0 DELTA    LCP-2488B4HDRME1 A    1718061A0123182 20170508 RDH10247/2 R2A 1310.00 29C   19%   -5.23  -7.27      
+          RRU2219B3* BXP_2049  1 DELTA    LCP-2488B4HDRME1 A    1718061A0123180 20170508 RDH10247/2 R2A 1310.00 29C   22%   -4.98  -5.93      
+ 3      3 RRU2219B3* BXP_2050  0 DELTA    LCP-2488B4HDRME1 A    1718061A0123176 20170508 RDH10247/2 R2A 1310.00 41C   32%   -5.47  -6.85      
+          RRU2219B3* BXP_2050  1 DELTA    LCP-2488B4HDRME1 A    1718061A0123175 20170508 RDH10247/2 R2A 1310.00 39C   22%   -5.11  -6.99      
+ 4 2_B3_1 RRU4428B3* BXP_2051  0 ERICSSON EOLP-1396-02-I9  1.0  PL2V061370      20200629 RDH10265/2 R1A 1310.00 43C   40%   -2.44  -2.01      
+-------------------------------------------------------------------------------------------------------------------------------------
+TN        DUS3201    000100    B OEM-C    GLC-T            A    FT12GT057       20170602 NON-ERICSSON   NA      NA    NA    NA     NA         
+-------------------------------------------------------------------------------------------------------------------------------------
+
+=====================================================================================================================================
+BOARD   LNH    PORT T S OpMode         AutoNeg MacAddress        VlanIds                  LOS BER
+=====================================================================================================================================
+DUS3201 000100 TN_A E 1 1G_FULL_MASTER true    98:C5:DB:2C:6F:A6 1479,1626,2479,2626,3479     
+DUS3201 000100 TN_B O 1 1G_FULL        true    98:C5:DB:2C:6F:A7 1626,2626                    
+-------------------------------------------------------------------------------------------------------------------------------------
+
+=====================================================================================================================================
+FRU        LNH      BOARD      RF  BP  TX (W/dBm)  VSWR (RL)   RX (dBm) UEs/gUEs  Sector/AntennaGroup/Cells (State:CellIds:PCIs)
+=====================================================================================================================================
+RRU-1      BXP_2048 RRU2219B3*  A  11  35.2 (45.5) 1.14 (23.5) -92.2    37/-      SE=S1* AG=1 FDD=DHKFR68LA (1:11:21)
+RRU-1      BXP_2048 RRU2219B3*  B  11  35.9 (45.5) 1.11 (25.8) -89.5    37/-      SE=S1* AG=1 FDD=DHKFR68LA (1:11:21)
+RRU-2      BXP_2049 RRU2219B3*  A  11  -           -           -105.0             SE=S2* AG=2
+RRU-2      BXP_2049 RRU2219B3*  B  11  0.2 (22.5)  1.10 (26.7) -105.2             SE=S2* AG=2
+RRU-3      BXP_2050 RRU2219B3*  A  11  4.5 (36.5)  1.21 (20.5) -89.5    54/-      SE=S3* AG=3 FDD=DHKFR68LC (1:13:37)
+RRU-3      BXP_2050 RRU2219B3*  B  11  4.5 (36.5)  1.42 (15.2) -91.4    54/-      SE=S3* AG=3 FDD=DHKFR68LC (1:13:37)
+RRU-2_B3_1 BXP_2051 RRU4428B3*  A  11  25.2 (44.0) 1.05 (33.0) -91.4    51/-      SE=S2_B3_1* AG=2_B3_1 FDD=DHKFR68LB (1:12:29)
+RRU-2_B3_1 BXP_2051 RRU4428B3*  B  11  25.1 (44.0) 1.07 (29.5) -90.9    51/-      SE=S2_B3_1* AG=2_B3_1 FDD=DHKFR68LB (1:12:29)
+RRU-2_B3_1 BXP_2051 RRU4428B3*  C  11  23.9 (43.8) 1.23 (19.7) -91.2    51/-      SE=S2_B3_1* AG=2_B3_1 FDD=DHKFR68LB (1:12:29)
+RRU-2_B3_1 BXP_2051 RRU4428B3*  D  11  23.9 (43.8) 1.02 (39.7) -89.6    51/-      SE=S2_B3_1* AG=2_B3_1 FDD=DHKFR68LB (1:12:29)
+-------------------------------------------------------------------------------------------------------------------------------------
+Tip: use option "a" or "af" to show the connected AntennaSubunits and AntennaNearUnits.
+
++---------+                      +------------+
+|         | A        O25      D1 |   RRU-1    |
+|         |----------1/1---------| RRU2219B3* |
+|         |          54m         |  BXP_2048  |
+|         |                      +------------+
+|         |                             |A  |B
+|         |                        SE=S1* AG=1
+|         |                      FDD=DHKFR68LA
+|         |
+|         |                      +------------+
+|         | B        O25      D1 |   RRU-2    |
+|         |----------2/2---------| RRU2219B3* |
+|         |          54m         |  BXP_2049  |
+|         |                      +------------+
+|         |                             |A  |B
+|    1    |                        SE=S2* AG=2
+| DUS3201 |
+| 000100  |                      +------------+
+|         | C        O25      D1 |   RRU-3    |
+|         |----------3/3---------| RRU2219B3* |
+|         |          54m         |  BXP_2050  |
+|         |                      +------------+
+|         |                             |A  |B
+|         |                        SE=S3* AG=3
+|         |                      FDD=DHKFR68LC
+|         |
+|         |                      +---------------+
+|         | E        O101     D1 |  RRU-2_B3_1   |
+|         |-----------4----------|  RRU4428B3*   |
+|         |          53m         |   BXP_2051    |
+|         |                      +---------------+
+|         |                        |A  |B  |C  |D
+|         |                 SE=S2_B3_1* AG=2_B3_1
++---------+                         FDD=DHKFR68LB
+
+DHKFR68L> st trx
+
+201231-08:17:06 10.140.77.39 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/4034
+
+$ssh_pid = 14838
+
+Connected to 10.140.77.39 (SubNetwork=ONRM_ROOT_MO,SubNetwork=LTE,MeContext=DHKFR68L,ManagedElement=DHKFR68L)
+===================================================================================
+Proxy  Adm State     Op. State     MO
+===================================================================================
+ 2644  1 (UNLOCKED)                SystemFunctions=1,HealthCheckM=1,HcRule=BtsFunction_CheckTrxStatus
+===================================================================================
+Total: 1 MOs
+
+DHKFR68L> bye
+Bye...
+
+[ka1639@scp-2-amos(ossenmdh) ~]$ amos DHKFR68
+EMGUI_CREDENTIALS: info ( /usr/local/bin/ssucredentials.sh ): The SLS certificate is already present and is valid for next 24 hours
+
+                        __  __  ____   _____
+                  /\   |  \/  |/ __ \ / ____|
+                 /  \  | \  / | |  | | (___  
+                / /\ \ | |\/| | |  | |\___ \ 
+               / ____ \| |  | | |__| |____) |
+              /_/    \_\_|  |_|\____/|_____/
+              OSS Framework for MoShell-20.0c 
+  Copyright (c) Ericsson AB 2001-2020 - All Rights Reserved
+              
+           
+WARNING: the AMOS version currently running is more than 46 weeks old.
+It is recommended to always use the latest released moshell version.
+To obtain the latest released version contact your local Ericsson support.
+
+$amosrb_pid = 15772
+
+Checking ip contact...OK
+
+HELP MENU            : h
+BASIC MO COMMANDS    : m
+OTHER MO COMMANDS    : n
+OTHER COMMANDS       : o
+PM COMMANDS          : p
+QUIT                 : q
+
+DHKFR68> lt all
+
+201231-08:18:03 10.42.205.169 20.0c  stopfile=/tmp/15715
+Trying rbs's password from uservariable com_passwords ...OK
+
+$ssh_pid = 15882
+
+Connected to 10.42.205.169 (SubNetwork=ONRM_ROOT_MO,SubNetwork=DRE14,MeContext=DHKFR68,ManagedElement=DHKFR68)
+
+Checking MOM version...MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace
+Parsing MOM (cached): /var/tmp/20201231-081759_15661/MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace.xml.cache.gz ....................................................................................................................Done.
+Using paramfile /opt/ericsson/amos/moshell/commonjars/pm/PARAM_MSRBS_18.Q4.txt
+Parsing file /opt/ericsson/amos/moshell/commonjars/pm/PARAM_MSRBS_18.Q4.txt ....................................................................Done.
+Using imomdfile /opt/ericsson/amos/moshell/commonjars/pm/IMOMD_MSRBS_18.Q3.txt
+Using imomfile /opt/ericsson/amos/moshell/commonjars/pm/IMOM_MSRBS_18.Q3.txt
+Connected to 10.42.205.169 (SubNetwork=ONRM_ROOT_MO,SubNetwork=DRE14,MeContext=DHKFR68,ManagedElement=DHKFR68)
+
+Last MO:  7916. Loaded 7916 MOs. Total:  7917 MOs.
+
+DHKFR68> alt
+
+201231-08:18:18 10.42.205.169 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/15715
+
+Collecting Alarms...
+
+====================================================================================================================
+Date & Time (UTC)   S Specific Problem                    MO (Cause/AdditionalInfo)
+====================================================================================================================
+2020-12-13 08:16:38 M No Connection                       FieldReplaceableUnit=SUP-1 (No hardware detected for the configured FieldReplaceableUnit)
+2020-12-13 15:40:26 w Calendar Clock NTP Server Unavailable SysM=1,TimeM=1,Ntp=1,NtpServer=2 (Configured NTP server is not used as basis for time of day clock)
+2020-12-17 13:36:05 w Auto Export Backup Failed           BrM=1,BrmBackupManager=1,BrmBackupScheduler=1 (Software error For more info, check the progress report of BrmBackup=35 actionId=1)
+>>> Total: 3 Alarms (0 Critical, 1 Major)
+
+DHKFR68> st cell
+
+201231-08:18:22 10.42.205.169 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/15715
+===================================================================================
+Proxy  Adm State     Op. State     MO
+===================================================================================
+   88  1 (UNLOCKED)  1 (ENABLED)   NodeBFunction=1,NodeBLocalCellGroup=1
+   89  1 (UNLOCKED)  1 (ENABLED)   NodeBFunction=1,NodeBLocalCellGroup=1,NodeBLocalCell=S1C1
+   90                1 (ENABLED)   NodeBFunction=1,NodeBLocalCellGroup=1,NodeBLocalCell=S1C1,CellResources=1
+   98  1 (UNLOCKED)  1 (ENABLED)   NodeBFunction=1,NodeBLocalCellGroup=1,NodeBLocalCell=S1C2
+   99                1 (ENABLED)   NodeBFunction=1,NodeBLocalCellGroup=1,NodeBLocalCell=S1C2,CellResources=1
+  107  1 (UNLOCKED)  1 (ENABLED)   NodeBFunction=1,NodeBLocalCellGroup=1,NodeBLocalCell=S2C1
+  108                1 (ENABLED)   NodeBFunction=1,NodeBLocalCellGroup=1,NodeBLocalCell=S2C1,CellResources=1
+  116  1 (UNLOCKED)  1 (ENABLED)   NodeBFunction=1,NodeBLocalCellGroup=1,NodeBLocalCell=S2C2
+  117                1 (ENABLED)   NodeBFunction=1,NodeBLocalCellGroup=1,NodeBLocalCell=S2C2,CellResources=1
+  125  1 (UNLOCKED)  1 (ENABLED)   NodeBFunction=1,NodeBLocalCellGroup=1,NodeBLocalCell=S3C1
+  126                1 (ENABLED)   NodeBFunction=1,NodeBLocalCellGroup=1,NodeBLocalCell=S3C1,CellResources=1
+  134  1 (UNLOCKED)  1 (ENABLED)   NodeBFunction=1,NodeBLocalCellGroup=1,NodeBLocalCell=S3C2
+  135                1 (ENABLED)   NodeBFunction=1,NodeBLocalCellGroup=1,NodeBLocalCell=S3C2,CellResources=1
+===================================================================================
+Total: 13 MOs
+
+DHKFR68> st rru
+
+201231-08:18:30 10.42.205.169 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/15715
+===================================================================================
+Proxy  Adm State     Op. State     MO
+===================================================================================
+   36  1 (UNLOCKED)  1 (ENABLED)   Equipment=1,FieldReplaceableUnit=RRU-1
+   42  1 (UNLOCKED)  1 (ENABLED)   Equipment=1,FieldReplaceableUnit=RRU-2
+   48  1 (UNLOCKED)  1 (ENABLED)   Equipment=1,FieldReplaceableUnit=RRU-3
+===================================================================================
+Total: 3 MOs
+
+DHKFR68> get memb
+
+201231-08:18:35 10.42.205.169 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/15715
+=================================================================================================================
+7829                                 SystemFunctions=1,SysM=1,Schema=RsyncNodeGroupSyncMember
+=================================================================================================================
+baseModelIdentifier                  
+baseModelVersion                     
+identifier                           RsyncNodeGroupSyncMember
+schemaId                             RsyncNodeGroupSyncMember
+selectedModelOptions                 s[0] = 
+version                              1.7.0
+=================================================================================================================
+Total: 1 MOs
+
+
+DHKFR68> get . isshared
+
+201231-08:19:01 10.42.205.169 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/15715
+=================================================================================================================
+MO                                                      Attribute         Value
+=================================================================================================================
+FieldReplaceableUnit=1                                  isSharedWithExternalMe false
+FieldReplaceableUnit=RRU-1                              isSharedWithExternalMe false
+FieldReplaceableUnit=RRU-2                              isSharedWithExternalMe false
+FieldReplaceableUnit=RRU-3                              isSharedWithExternalMe false
+FieldReplaceableUnit=SCU                                isSharedWithExternalMe 
+FieldReplaceableUnit=SUP-1                              isSharedWithExternalMe 
+=================================================================================================================
+Total: 6 MOs
+
+
+DHKFR68> get . maxtx
+
+201231-08:19:10 10.42.205.169 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/15715
+=================================================================================================================
+MO                                                      Attribute         Value
+=================================================================================================================
+NodeBLocalCellGroup=1,NodeBLocalCell=S1C1,NodeBSectorCarrier=S1C1 configuredMaxTxPower 40000
+NodeBLocalCellGroup=1,NodeBLocalCell=S1C2,NodeBSectorCarrier=S1C2 configuredMaxTxPower 40000
+NodeBLocalCellGroup=1,NodeBLocalCell=S2C1,NodeBSectorCarrier=S2C1 configuredMaxTxPower 40000
+NodeBLocalCellGroup=1,NodeBLocalCell=S2C2,NodeBSectorCarrier=S2C2 configuredMaxTxPower 40000
+NodeBLocalCellGroup=1,NodeBLocalCell=S3C1,NodeBSectorCarrier=S3C1 configuredMaxTxPower 40000
+NodeBLocalCellGroup=1,NodeBLocalCell=S3C2,NodeBSectorCarrier=S3C2 configuredMaxTxPower 40000
+=================================================================================================================
+Total: 6 MOs
+
+
+DHKFR68> invxrg
+
+201231-08:19:25 10.42.205.169 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/15715
+Connected to 10.42.205.169 (SubNetwork=ONRM_ROOT_MO,SubNetwork=DRE14,MeContext=DHKFR68,ManagedElement=DHKFR68)
+
+Last MO:  7916. Loaded 7916 MOs. Total:  7917 MOs.
+Checking available boards on node...
+
+Collecting RCS board data ...
+..............................................................................
+
+.............................................................................................................................................................................
+get /rop/A20201231.0130-0145_DHKFR68.xml.gz /ericsson/log/amos/moshell_logfiles/ka1639/logs_moshell/pmfiles/10.42.205.169/rop/A20201231.0130-0145_DHKFR68.xml.gz ... OK
+get /rop/A20201231.0145-0200_DHKFR68.xml.gz /ericsson/log/amos/moshell_logfiles/ka1639/logs_moshell/pmfiles/10.42.205.169/rop/A20201231.0145-0200_DHKFR68.xml.gz ... OK
+get /rop/A20201231.0200-0215_DHKFR68.xml.gz /ericsson/log/amos/moshell_logfiles/ka1639/logs_moshell/pmfiles/10.42.205.169/rop/A20201231.0200-0215_DHKFR68.xml.gz ... OK
+.......
+Collecting TN data...
+...............................................................................................................
+Collecting RF data...
+................
+Node: RadioNode W   CXP9024418/6_R55N28 (18.Q4.C6)
+
+=====================================================================================================================================
+FRU   LNH      BOARD      ST FAULT OPER MAINT STAT PRODUCTNUMBER   REV     SERIAL        DATE      TEMP  UPT 
+=====================================================================================================================================
+1     000100   DUS3201     1   OFF   ON   OFF   ON KDU137925/41    R5A/B   DU50150770    20171020       17.7  (Bb5212)
+RRU-1 BXP_2048 RRUS2217B1  1   OFF   ON   OFF  N/A KRC161490/1     R1C/B   D823731931    20160507  35.3 17.6  (Radio2217B1)
+RRU-2 BXP_2049 RRUS2217B1  1   OFF   ON   OFF  N/A KRC161490/1     R2A/A   D823975143    20160609  39.3 17.6  (Radio2217B1)
+RRU-3 BXP_2050 RRUS2217B1  1   OFF   ON   OFF  N/A KRC161490/1     R1C/B   D823725213    20160507  38.1 17.6  (Radio2217B1)
+SCU   Z??_01   SUP6601     L   OFF   ON   N/A  N/A 1/BFL901009/4   R2E     BR84889523    20160623            
+SUP-1 Z??_02   SUP6601     0     ?    ?     ?    ? 1/BFL901009/4   R2E     BR84889523    20160623            
+-------------------------------------------------------------------------------------------------------------------------------------
+
+=====================================================================================================================================
+XPBOARD   ST FAULT OPER PRODUCTNUMBER    REV SERIAL/NAME DATE      TEMP MO
+=====================================================================================================================================
+RBS6601                 20/BFL901009/821 R1A C970002436  20161027    29 Cabinet=1
+FANGROUP     OFF                                                        Cabinet=1,FanGroup=1
+-------------------------------------------------------------------------------------------------------------------------------------
+
+=====================================================================================================================================
+ID T RiL      BPBP BOARD1     LNH1 PORT R LINK RATE  BOARD2     LNH2   PORT R LINK RATE  LENGTH MO1 - MO2
+=====================================================================================================================================
+ 1 O 1_1_RI_A 1111 DUS3201    000100  1 M Up   2.5G  RRUS2217B1 BXP_2048  0 S Up   2.5G     54m Fru=1(A) Fru=RRU-1(D1)
+ 2 O 2_1_RI_B 1111 DUS3201    000100  2 M Up   2.5G  RRUS2217B1 BXP_2049  0 S Up   2.5G     55m Fru=1(B) Fru=RRU-2(D1)
+ 3 O 3_1_RI_C 1111 DUS3201    000100  3 M Up   2.5G  RRUS2217B1 BXP_2050  0 S Up   2.5G     54m Fru=1(C) Fru=RRU-3(D1)
+-------------------------------------------------------------------------------------------------------------------------------------
+
+=====================================================================================================================================
+ID LINK RiL      VENDOR1 VENDORPROD1      REV1 SERIAL1        DATE1    ERICSSONPROD1  VENDOR2 VENDORPROD2      REV2 SERIAL2        DATE2    ERICSSONPROD2 
+=====================================================================================================================================
+ 1 Up   1_1_RI_A DELTA   LCP-2488B4HDRM-E A    155306120258   16010201 RDH10247/2 R2A DELTA   LCP-2488B4HDRM-E A    155306120244   20160102 RDH10247/2 R2A
+ 2 Up   2_1_RI_B DELTA   LCP-2488B4HDRM-E A    154406117661   15102901 RDH10247/2 R2A WTD     RTXM192-406-C25  3.0  EA184000210603 20181011 RDH10247/2 R2A
+ 3 Up   3_1_RI_C DELTA   LCP-2488B4HDRM-E A    155306120237   16010201 RDH10247/2 R2A DELTA   LCP-2488B4HDRM-E A    155306120238   20160102 RDH10247/2 R2A
+-------------------------------------------------------------------------------------------------------------------------------------
+
+=====================================================================================================================================
+ID LINK RiL      WL1     TEMP1 TXbs1 TXdBm1 RXdBm1 BER1   WL2     TEMP2 TXbs2 TXdBm2 RXdBm2 BER2   DlLoss UlLoss
+=====================================================================================================================================
+ 1 Up   1_1_RI_A 1310.00 47C   26%   -5.77  -5.93         1310.00 38C   25%   -5.79  -7.53           1.76   0.14
+ 2 Up   2_1_RI_B 1310.00 48C   24%   -5.62  -5.65         1310.00 38C   19%   -5.62  -6.72            1.1   0.03
+ 3 Up   3_1_RI_C 1310.00 49C   26%   -5.78  -6.56         1310.00 41C   25%   -6.01  -8.59           2.81   0.55
+-------------------------------------------------------------------------------------------------------------------------------------
+
+=====================================================================================================================================
+ID RiL      BOARD      SFPLNH PORT VENDOR  VENDORPROD       REV  SERIAL         DATE     ERICSSONPROD   WL      TEMP  TXbs  TXdBm  RXdBm   BER
+=====================================================================================================================================
+ 1 1_1_RI_A DUS3201    000100    1 DELTA   LCP-2488B4HDRM-E A    155306120258   16010201 RDH10247/2 R2A 1310.00 47C   26%   -5.77  -5.93      
+ 2 2_1_RI_B DUS3201    000100    2 DELTA   LCP-2488B4HDRM-E A    154406117661   15102901 RDH10247/2 R2A 1310.00 48C   24%   -5.62  -5.65      
+ 3 3_1_RI_C DUS3201    000100    3 DELTA   LCP-2488B4HDRM-E A    155306120237   16010201 RDH10247/2 R2A 1310.00 49C   26%   -5.78  -6.56      
+ 1 1_1_RI_A RRUS2217B1 BXP_2048  0 DELTA   LCP-2488B4HDRM-E A    155306120244   20160102 RDH10247/2 R2A 1310.00 38C   25%   -5.79  -7.53      
+ 2 2_1_RI_B RRUS2217B1 BXP_2049  0 WTD     RTXM192-406-C25  3.0  EA184000210603 20181011 RDH10247/2 R2A 1310.00 38C   19%   -5.62  -6.72      
+ 3 3_1_RI_C RRUS2217B1 BXP_2050  0 DELTA   LCP-2488B4HDRM-E A    155306120238   20160102 RDH10247/2 R2A 1310.00 41C   25%   -6.01  -8.59      
+-------------------------------------------------------------------------------------------------------------------------------------
+
+=====================================================================================================================================
+BOARD   LNH    PORT T S OpMode        AutoNeg MacAddress        VlanIds   LOS BER
+=====================================================================================================================================
+DUS3201 000100 TN_A E 1 1G_FULL_SLAVE true    98:C5:DB:28:F7:46 1626,2626     
+-------------------------------------------------------------------------------------------------------------------------------------
+
+=====================================================================================================================================
+FRU   LNH      BOARD      RF  BP  TX (W/dBm)  VSWR (RL)   RX (dBm) RLs  Sector/AntennaGroup/Cells (State:CellIds:PCIs)
+=====================================================================================================================================
+RRU-1 BXP_2048 RRUS2217B1  A  11  5.6 (37.4)  1.23 (19.9) -102.1   6    SE=1 AG=1 NB=1/S1C1/S1C1 NB=1/S1C2/S1C2 (1:35817, 1:40437)
+RRU-1 BXP_2048 RRUS2217B1  B  11  19.7 (42.9) 1.24 (19.4) -101.3   6    SE=1 AG=1 NB=1/S1C1/S1C1 NB=1/S1C2/S1C2 (1:35817, 1:40437)
+RRU-2 BXP_2049 RRUS2217B1  A  11  4.3 (36.3)  1.14 (23.7) -98.9    22   SE=2 AG=2 NB=1/S2C1/S2C1 NB=1/S2C2/S2C2 (1:35818, 1:40438)
+RRU-2 BXP_2049 RRUS2217B1  B  11  3.8 (35.8)  1.10 (26.7) -99.1    22   SE=2 AG=2 NB=1/S2C1/S2C1 NB=1/S2C2/S2C2 (1:35818, 1:40438)
+RRU-3 BXP_2050 RRUS2217B1  A  11  6.8 (38.3)  1.16 (22.8) -101.1   29   SE=3 AG=3 NB=1/S3C1/S3C1 NB=1/S3C2/S3C2 (1:35819, 1:40439)
+RRU-3 BXP_2050 RRUS2217B1  B  11  6.6 (38.2)  1.20 (21.0) -101.4   29   SE=3 AG=3 NB=1/S3C1/S3C1 NB=1/S3C2/S3C2 (1:35819, 1:40439)
+-------------------------------------------------------------------------------------------------------------------------------------
+Tip: use option "a" or "af" to show the connected AntennaSubunits and AntennaNearUnits.
+
++---------+                   +------------+
+|         | A      O25     D1 |   RRU-1    |
+|         |---------1---------| RRUS2217B1 |
+|         |        54m        |  BXP_2048  |
+|         |                   +------------+
+|         |                          |A  |B
+|         |                       SE=1 AG=1
+|         |   NB=1/S1C1/S1C1 NB=1/S1C2/S1C2
+|         |
+|         |                   +------------+
+|         | B      O25     D1 |   RRU-2    |
+|    1    |---------2---------| RRUS2217B1 |
+| DUS3201 |        55m        |  BXP_2049  |
+| 000100  |                   +------------+
+|         |                          |A  |B
+|         |                       SE=2 AG=2
+|         |   NB=1/S2C1/S2C1 NB=1/S2C2/S2C2
+|         |
+|         |                   +------------+
+|         | C      O25     D1 |   RRU-3    |
+|         |---------3---------| RRUS2217B1 |
+|         |        54m        |  BXP_2050  |
+|         |                   +------------+
+|         |                          |A  |B
+|         |                       SE=3 AG=3
++---------+   NB=1/S3C1/S3C1 NB=1/S3C2/S3C2
+
+DHKFR68> st trx
+
+201231-08:21:13 10.42.205.169 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/15715
+===================================================================================
+Proxy  Adm State     Op. State     MO
+===================================================================================
+  384  1 (UNLOCKED)                SystemFunctions=1,HealthCheckM=1,HcRule=BtsFunction_CheckTrxStatus
+===================================================================================
+Total: 1 MOs
+
+DHKFR68> bye
+Bye...
+
+[ka1639@scp-2-amos(ossenmdh) ~]$ amos DHKFR68B03
+EMGUI_CREDENTIALS: info ( /usr/local/bin/ssucredentials.sh ): The SLS certificate is already present and is valid for next 24 hours
+
+                        __  __  ____   _____
+                  /\   |  \/  |/ __ \ / ____|
+                 /  \  | \  / | |  | | (___  
+                / /\ \ | |\/| | |  | |\___ \ 
+               / ____ \| |  | | |__| |____) |
+              /_/    \_\_|  |_|\____/|_____/
+              OSS Framework for MoShell-20.0c 
+  Copyright (c) Ericsson AB 2001-2020 - All Rights Reserved
+              
+           
+WARNING: the AMOS version currently running is more than 46 weeks old.
+It is recommended to always use the latest released moshell version.
+To obtain the latest released version contact your local Ericsson support.
+
+$amosrb_pid = 19442
+
+Checking ip contact...OK
+
+HELP MENU            : h
+BASIC MO COMMANDS    : m
+OTHER MO COMMANDS    : n
+OTHER COMMANDS       : o
+PM COMMANDS          : p
+QUIT                 : q
+
+DHKFR68B03> lt all
+
+201231-08:21:36 10.212.72.210 20.0c  stopfile=/tmp/19382
+Trying rbs's password from uservariable com_passwords ...OK
+
+$ssh_pid = 19554
+
+Connected to 10.212.72.210 (SubNetwork=ONRM_ROOT_MO,SubNetwork=DRE14,MeContext=DHKFR68B03,ManagedElement=DHKFR68B03)
+
+Checking MOM version...MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace
+Parsing MOM (cached): /var/tmp/20201231-082132_19329/MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace.xml.cache.gz ....................................................................................................................Done.
+Using paramfile /opt/ericsson/amos/moshell/commonjars/pm/PARAM_MSRBS_18.Q4.txt
+Parsing file /opt/ericsson/amos/moshell/commonjars/pm/PARAM_MSRBS_18.Q4.txt ....................................................................Done.
+Using imomdfile /opt/ericsson/amos/moshell/commonjars/pm/IMOMD_MSRBS_18.Q3.txt
+Using imomfile /opt/ericsson/amos/moshell/commonjars/pm/IMOM_MSRBS_18.Q3.txt
+Connected to 10.212.72.210 (SubNetwork=ONRM_ROOT_MO,SubNetwork=DRE14,MeContext=DHKFR68B03,ManagedElement=DHKFR68B03)
+
+Last MO:  7585. Loaded 7585 MOs. Total:  7586 MOs.
+
+DHKFR68B03> alt
+
+201231-08:21:47 10.212.72.210 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/19382
+
+Collecting Alarms...
+
+====================================================================================================================
+Date & Time (UTC)   S Specific Problem                    MO (Cause/AdditionalInfo)
+====================================================================================================================
+2020-12-29 17:10:16 w Calendar Clock NTP Server Unavailable SysM=1,TimeM=1,Ntp=1,NtpServer=2 (Configured NTP server is not used as basis for time of day clock)
+>>> Total: 1 Alarms (0 Critical, 0 Major)
+
+DHKFR68B03> st cell
+
+201231-08:21:51 10.212.72.210 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/19382
+===================================================================================
+Proxy  Adm State     Op. State     MO
+===================================================================================
+===================================================================================
+Total: 0 MOs
+
+DHKFR68B03> st rru
+
+201231-08:21:54 10.212.72.210 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/19382
+===================================================================================
+Proxy  Adm State     Op. State     MO
+===================================================================================
+   98  1 (UNLOCKED)  1 (ENABLED)   Equipment=1,FieldReplaceableUnit=RRU-1_B3_1
+  106  1 (UNLOCKED)  1 (ENABLED)   Equipment=1,FieldReplaceableUnit=RRU-1_B8_1
+  114  1 (UNLOCKED)  1 (ENABLED)   Equipment=1,FieldReplaceableUnit=RRU-2_B3_1
+  122  1 (UNLOCKED)  1 (ENABLED)   Equipment=1,FieldReplaceableUnit=RRU-2_B8_1
+  130  1 (UNLOCKED)  1 (ENABLED)   Equipment=1,FieldReplaceableUnit=RRU-3_B3_1
+  138  1 (UNLOCKED)  1 (ENABLED)   Equipment=1,FieldReplaceableUnit=RRU-3_B8_1
+===================================================================================
+Total: 6 MOs
+
+DHKFR68B03> st trx
+
+201231-08:21:57 10.212.72.210 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/19382
+===================================================================================
+Proxy  Adm State     Op. State     MO
+===================================================================================
+    4  1 (UNLOCKED)  1 (ENABLED)   BtsFunction=1,GsmSector=D05LI9A,Trx=0
+    5  1 (UNLOCKED)  1 (ENABLED)   BtsFunction=1,GsmSector=D05LI9A,Trx=1
+    6  1 (UNLOCKED)  1 (ENABLED)   BtsFunction=1,GsmSector=D05LI9A,Trx=2
+    9  1 (UNLOCKED)  1 (ENABLED)   BtsFunction=1,GsmSector=D05LI9B,Trx=0
+   10  1 (UNLOCKED)  1 (ENABLED)   BtsFunction=1,GsmSector=D05LI9B,Trx=1
+   11  1 (UNLOCKED)  1 (ENABLED)   BtsFunction=1,GsmSector=D05LI9B,Trx=2
+   12  1 (UNLOCKED)  1 (ENABLED)   BtsFunction=1,GsmSector=D05LI9B,Trx=3
+   15  1 (UNLOCKED)  1 (ENABLED)   BtsFunction=1,GsmSector=D05LI9C,Trx=0
+   16  1 (UNLOCKED)  1 (ENABLED)   BtsFunction=1,GsmSector=D05LI9C,Trx=1
+   17  1 (UNLOCKED)  1 (ENABLED)   BtsFunction=1,GsmSector=D05LI9C,Trx=2
+   18  1 (UNLOCKED)  1 (ENABLED)   BtsFunction=1,GsmSector=D05LI9C,Trx=3
+  412  1 (UNLOCKED)                SystemFunctions=1,HealthCheckM=1,HcRule=BtsFunction_CheckTrxStatus
+===================================================================================
+Total: 12 MOs
+
+DHKFR68B03> get memb
+
+201231-08:22:02 10.212.72.210 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/19382
+=================================================================================================================
+7488                                 SystemFunctions=1,SysM=1,Schema=RsyncNodeGroupSyncMember
+=================================================================================================================
+baseModelIdentifier                  
+baseModelVersion                     
+identifier                           RsyncNodeGroupSyncMember
+schemaId                             RsyncNodeGroupSyncMember
+selectedModelOptions                 s[0] = 
+version                              1.7.0
+=================================================================================================================
+7570                                 Transport=1,Synchronization=1,RadioEquipmentClock=1,NodeGroupSyncMember=1
+=================================================================================================================
+administrativeState                  1 (UNLOCKED)
+localNodeInformation                 Struct{3}
+ >>> 1.hopsFromSyncProvider = 1
+ >>> 2.localState = 2 (SYNC_RECEIVER_TIME_LOCKED)
+ >>> 3.synchronizedTo = 1
+nodeGroupSyncMemberId                1
+selectionMode                        1 (NODE_PRIORITY)
+syncNodePriority                     3
+syncProviderInformation              Struct{2}
+ >>> 1.syncProviderNodePriority = 1
+ >>> 2.syncProviderState = 2 (FREQUENCY_MODE)
+syncRiPortCandidate                  [3] = 
+ >>> syncRiPortCandidate = Equipment=1,FieldReplaceableUnit=1,RiPort=A
+ >>> syncRiPortCandidate = Equipment=1,FieldReplaceableUnit=1,RiPort=B
+ >>> syncRiPortCandidate = Equipment=1,FieldReplaceableUnit=1,RiPort=C
+syncRiPortStatus                     i[3] = 1 2 2 (OK_ACTIVE OK_NOT_ACTIVE OK_NOT_ACTIVE)
+userLabel                            
+=================================================================================================================
+Total: 2 MOs
+
+
+DHKFR68B03> get . maxtx
+
+201231-08:22:26 10.212.72.210 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/19382
+=================================================================================================================
+MO                                                      Attribute         Value
+=================================================================================================================
+GsmSector=D05LI9A,Trx=0                                 bscMaxTxPower     430
+GsmSector=D05LI9A,Trx=0                                 configuredMaxTxPower 20000
+GsmSector=D05LI9A,Trx=0                                 maxTxPowerCapability 430
+GsmSector=D05LI9A,Trx=0                                 reservedMaxTxPower 20000
+GsmSector=D05LI9A,Trx=1                                 bscMaxTxPower     430
+GsmSector=D05LI9A,Trx=1                                 configuredMaxTxPower 20000
+GsmSector=D05LI9A,Trx=1                                 maxTxPowerCapability 430
+GsmSector=D05LI9A,Trx=1                                 reservedMaxTxPower 20000
+GsmSector=D05LI9A,Trx=2                                 bscMaxTxPower     430
+GsmSector=D05LI9A,Trx=2                                 configuredMaxTxPower 20000
+GsmSector=D05LI9A,Trx=2                                 maxTxPowerCapability 430
+GsmSector=D05LI9A,Trx=2                                 reservedMaxTxPower 20000
+GsmSector=D05LI9B,Trx=0                                 bscMaxTxPower     430
+GsmSector=D05LI9B,Trx=0                                 configuredMaxTxPower 20000
+GsmSector=D05LI9B,Trx=0                                 maxTxPowerCapability 430
+GsmSector=D05LI9B,Trx=0                                 reservedMaxTxPower 20000
+GsmSector=D05LI9B,Trx=1                                 bscMaxTxPower     430
+GsmSector=D05LI9B,Trx=1                                 configuredMaxTxPower 20000
+GsmSector=D05LI9B,Trx=1                                 maxTxPowerCapability 430
+GsmSector=D05LI9B,Trx=1                                 reservedMaxTxPower 20000
+GsmSector=D05LI9B,Trx=2                                 bscMaxTxPower     430
+GsmSector=D05LI9B,Trx=2                                 configuredMaxTxPower 20000
+GsmSector=D05LI9B,Trx=2                                 maxTxPowerCapability 430
+GsmSector=D05LI9B,Trx=2                                 reservedMaxTxPower 20000
+GsmSector=D05LI9B,Trx=3                                 bscMaxTxPower     430
+GsmSector=D05LI9B,Trx=3                                 configuredMaxTxPower 20000
+GsmSector=D05LI9B,Trx=3                                 maxTxPowerCapability 430
+GsmSector=D05LI9B,Trx=3                                 reservedMaxTxPower 20000
+GsmSector=D05LI9C,Trx=0                                 bscMaxTxPower     430
+GsmSector=D05LI9C,Trx=0                                 configuredMaxTxPower 20000
+GsmSector=D05LI9C,Trx=0                                 maxTxPowerCapability 430
+GsmSector=D05LI9C,Trx=0                                 reservedMaxTxPower 20000
+GsmSector=D05LI9C,Trx=1                                 bscMaxTxPower     430
+GsmSector=D05LI9C,Trx=1                                 configuredMaxTxPower 20000
+GsmSector=D05LI9C,Trx=1                                 maxTxPowerCapability 430
+GsmSector=D05LI9C,Trx=1                                 reservedMaxTxPower 20000
+GsmSector=D05LI9C,Trx=2                                 bscMaxTxPower     430
+GsmSector=D05LI9C,Trx=2                                 configuredMaxTxPower 20000
+GsmSector=D05LI9C,Trx=2                                 maxTxPowerCapability 430
+GsmSector=D05LI9C,Trx=2                                 reservedMaxTxPower 20000
+GsmSector=D05LI9C,Trx=3                                 bscMaxTxPower     430
+GsmSector=D05LI9C,Trx=3                                 configuredMaxTxPower 20000
+GsmSector=D05LI9C,Trx=3                                 maxTxPowerCapability 430
+GsmSector=D05LI9C,Trx=3                                 reservedMaxTxPower 20000
+=================================================================================================================
+Total: 11 MOs
+
+
+DHKFR68B03> bye
+Bye...

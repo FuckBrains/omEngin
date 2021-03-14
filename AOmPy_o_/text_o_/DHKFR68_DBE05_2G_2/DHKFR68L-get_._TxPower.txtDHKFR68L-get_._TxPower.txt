@@ -1,0 +1,15 @@
+
+DHKFR68L> get . TxPower
+
+201231-08:08:54 10.140.77.39 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/4034
+=================================================================================================================
+MO                                                      Attribute         Value
+=================================================================================================================
+SectorCarrier=11                                        configuredMaxTxPower 80000
+SectorCarrier=11                                        txPowerPersistentLock false
+SectorCarrier=12                                        configuredMaxTxPower 120000
+SectorCarrier=12                                        txPowerPersistentLock false
+SectorCarrier=13                                        configuredMaxTxPower 60000
+SectorCarrier=13                                        txPowerPersistentLock false
+=================================================================================================================
+Total: 3 MOs

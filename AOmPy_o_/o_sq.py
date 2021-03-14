@@ -46,7 +46,7 @@ def createtable():
     conn = MySql('root','admin','127.0.0.1:3306','omdb')    
     pt = os.getcwd() + "\\csv\\sclick.csv"
     df = pd.read_csv(pt)
-    x = myq.CreateTable_MYSQL(connection = conn, tablename = 'TAX2', df = df, table_col = False, table_col_datatype = False, space = '_')
+    x = myq.CreateTable_MYSQL(connection = conn, tablename = 'ASAQ', df = df, table_col = False, table_col_datatype = False, space = '_')
     conn.close()
 
 def sql2df(tbl):
@@ -55,17 +55,17 @@ def sql2df(tbl):
     df = pd.read_sql(qry, con = conn)
     return df
 
-#createtable()
-conn = MsSql()
-pt = os.getcwd() + "\\sclick2.csv"
-df = pd.read_csv(pt)
-df.to_sql("t13", con = conn)
+createtable()
+#conn = MsSql()
+#pt = os.getcwd() + "\\sclick2.csv"
+#df = pd.read_csv(pt)
+#df.to_sql("t13", con = conn)
 #msq.CreateTable_MSSQL(df, "t33", conn)
 #lser = insupd.df_to_sql(df, 'SOC_Roster', 't22', conn, oncolumn = 'ALL')
 #conn.commit()
 #
 #dfx = pd.read_sql('select * from omtx2', con = conn)
 #print(dfx.columns, dfx.dtypes, df.shape[0])
-dfx = pd.read_sql("select * from t22", con=conn)
-print(dfx.columns, dfx)
+#dfx = pd.read_sql("select * from t22", con=conn)
+#print(dfx.columns, dfx)
 

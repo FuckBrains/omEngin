@@ -1,0 +1,13 @@
+
+DHKFR68L> alt
+
+201231-08:06:56 10.140.77.39 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/4034
+
+Collecting Alarms...
+
+====================================================================================================================
+Date & Time (UTC)   S Specific Problem                    MO (Cause/AdditionalInfo)
+====================================================================================================================
+2020-12-28 09:44:58 m External Link Failure               ENodeBFunction=1 (X2 link problem to one or several neighbouring eNodeBs. AI: PLMN ID-eNB ID 1 : 4702-132066,PLMN ID-eNB ID 2 : 4702-130404,PLMN ID-eNB ID 3 : 4702-130398,PLMN ID-eNB ID 4 : 4702-130378,PLMN ID-eNB ID 5 : 4702-130372,PLMN ID-eNB ID 6 : 4702-130362,PLMN ID-eNB ID 7 : 4702-131139,PLMN ID-eNB ID 8 : 4702-132054,PLMN ID-eNB ID 9 : 4702-132042,PLMN ID-eNB ID : list truncated)
+2020-12-28 13:42:11 w Calendar Clock NTP Server Unavailable SysM=1,TimeM=1,Ntp=1,NtpServer=2 (Configured NTP server is not used as basis for time of day clock)
+>>> Total: 2 Alarms (0 Critical, 0 Major)

@@ -8,8 +8,8 @@ def mssql_121():
     conn = pyodbc.connect(cstr)
     return conn
 
-def mssql_115():
-    cstr = "Driver={SQL Server};SERVER=192.168.0.115;DATABASE=SOC_Roster;UID=sa;PWD=1q2w3eaz$"
+def mssql():
+    cstr = "Driver={SQL Server};SERVER=192.168.0.108;DATABASE=SOC_Roster;UID=sa;PWD=1q2w3eaz$"
     conn = pyodbc.connect(cstr)
     return conn
 
@@ -25,5 +25,4 @@ def mysql(user = 'root', password = 'root', host = '127.0.0.1:3306', db = "omdb"
     return conn
 
 
-#con = mssql_115()
-con2 = mysql()
+con = mssql()

@@ -1,0 +1,13 @@
+
+DHKFR68L> st rru
+
+201231-08:07:17 10.140.77.39 20.0c MSRBS_NODE_MODEL_18.Q4_369.27924.51_aace stopfile=/tmp/4034
+===================================================================================
+Proxy  Adm State     Op. State     MO
+===================================================================================
+ 2336  1 (UNLOCKED)  1 (ENABLED)   Equipment=1,FieldReplaceableUnit=RRU-1
+ 2344  1 (UNLOCKED)  1 (ENABLED)   Equipment=1,FieldReplaceableUnit=RRU-2
+ 2352  1 (UNLOCKED)  1 (ENABLED)   Equipment=1,FieldReplaceableUnit=RRU-2_B3_1
+ 2362  1 (UNLOCKED)  1 (ENABLED)   Equipment=1,FieldReplaceableUnit=RRU-3
+===================================================================================
+Total: 4 MOs
